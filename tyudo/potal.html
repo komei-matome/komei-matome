@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【公明党】 動画要約まとめ</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap');
+
+        :root {
+            --primary: #005eb0; /* Komeito Blue */
+            --accent: #facc15; /* Warning/Highlight Yellow */
+            --bg: #f3f4f6;
+            --text: #1f2937;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+        }
+
+        /* Hero Header */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, #004080 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            font-weight: 900;
+            line-height: 1.3;
+        }
+
+        .subtitle {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            background: rgba(255,255,255,0.2);
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+
+        /* Container */
+        .container {
+            max-width: 800px;
+            margin: -20px auto 0;
+            padding: 0 15px 40px;
+            position: relative;
+        }
+
+        /* Filter Tabs (Optional for future) */
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .tab {
+            background: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            color: #666;
+        }
+        .tab.active {
+            background: var(--accent);
+            color: #000;
+        }
+
+        /* Video Card List */
+        .card-list {
+            display: grid;
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px solid #e5e7eb;
+            transition: transform 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Thumbnail Area */
+        .card-header {
+            background: #eee;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #ccc;
+            position: relative;
+        }
+        .tag {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: var(--primary);
+            color: white;
+            padding: 3px 8px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+        .tag.urgent {
+            background: #ef4444;
+        }
+
+        /* Content Area */
+        .card-body {
+            padding: 20px;
+            flex-grow: 1;
+        }
+
+        .card-title {
+            font-weight: 900;
+            font-size: 1.1rem;
+            margin: 0 0 10px 0;
+            line-height: 1.4;
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: #555;
+            margin: 0 0 15px 0;
+            line-height: 1.5;
+        }
+
+        .card-btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background: var(--text);
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+        .card-btn:hover {
+            background: var(--primary);
+        }
+        .tag_span1{
+          color: black;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.8rem;
+            color: #888;
+        }
+        
+        .share-btn {
+            background: #000;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        @media (min-width: 600px) {
+            .card-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>公明党<br>動画要約まとめ</h1>
+    <div class="subtitle">30秒でわかる！公明党の真実</div>
+</header>
+
+<div class="container">
+    <div class="tabs">
+        <div class="tab active">すべて</div>
+        <div class="tab">新党関連</div>
+        <div class="tab">政策</div>
+    </div>
+
+    <div class="card-list">
+        <!-- 記事1：斎藤代表直撃 -->
+        <article class="card">
+            <div class="card-header">
+                <span class="tag urgent">必読</span>
+                🍚
+            </div>
+            <div class="card-body">
+                <h2 class="card-title">【緊急直撃】斎藤代表が激白！新党結成のホンネ</h2>
+                <p class="card-desc">「立憲と合併？」「公明党なくなる？」ネットの噂に代表がズバリ回答。サブチャンネルのインタビュー要約。</p>
+                <!-- 実際のファイル名に合わせてリンク先を変更してください -->
+                <a href="shinto_saito_interview.html" class="card-btn">図解を見る ➡</a>
+            </div>
+        </article>
+
+        <!-- 記事2：いさ進一氏解説 -->
+        <article class="card">
+            <div class="card-header">
+                <span class="tag">解説</span>
+                🫰<span class="tag_span1">&</span>✌️
+            </div>
+            <div class="card-body">
+                <h2 class="card-title">いさ進一氏「比例転出」の決断と5つの柱</h2>
+                <p class="card-desc">なぜ小選挙区を撤退するのか？新党に参加する条件「5つの柱」とは何か？涙の決断を解説。</p>
+                <!-- 実際のファイル名に合わせてリンク先を変更してください -->
+                <a href="isa_summary.html" class="card-btn">図解を見る ➡</a>
+            </div>
+        </article>
+
+
+    </div>
+
+    <footer>
+        <p>Created by 公明党支持者有志</p>
+        <a href="https://twitter.com/intent/tweet?text=公明党の動画まとめサイト！わかりやすくておすすめ！&url=https://yoursite.com" class="share-btn">Xでシェアする</a>
+    </footer>
+</div>
+
+</body>
+</html>

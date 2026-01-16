@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【緊急図解】いさ進一氏 配信要約</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap');
+
+        :root {
+            --bg-color: #f0f0f0;
+            --paper-color: #ffffff;
+            --ink-color: #1a1a1a;
+            --accent-blue: #3b82f6; /* 新党・中道のイメージ */
+            --accent-red: #ef4444; /* 重要・警告 */
+            --accent-yellow: #facc15; /* ハイライト */
+            --border-width: 2px;
+            --shadow-offset: 4px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--ink-color);
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        /* A4 Paper Settings */
+        .page {
+            width: 210mm;
+            height: 296mm; /* A4 height slightly reduced for safe margins */
+            padding: 15mm;
+            background: var(--paper-color);
+            margin: 20px auto;
+            position: relative;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Neo-Brutalism Boxes */
+        .box {
+            border: var(--border-width) solid var(--ink-color);
+            padding: 10px;
+            margin-bottom: 10px;
+            background: #fff;
+            box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--ink-color);
+        }
+
+        .box-title {
+            font-weight: 900;
+            text-transform: uppercase;
+            border-bottom: var(--border-width) solid var(--ink-color);
+            margin: -10px -10px 10px -10px;
+            padding: 5px 10px;
+            background: var(--ink-color);
+            color: #fff;
+            font-size: 1.1rem;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            border: var(--border-width) solid var(--ink-color);
+            padding: 15px;
+            background: var(--accent-yellow);
+            box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--ink-color);
+            margin-bottom: 20px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            line-height: 1.2;
+            font-weight: 900;
+        }
+        .subtitle {
+            font-weight: 700;
+            margin-top: 5px;
+        }
+
+        /* Diagram Section */
+        .diagram-container {
+            display: flex;
+            align-items: stretch;
+            gap: 10px;
+            margin-bottom: 15px;
+            height: 180px;
+        }
+
+        .party-block {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: #eee;
+            font-weight: bold;
+        }
+
+        .filter-zone {
+            flex: 1.5;
+            background: var(--accent-blue);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            clip-path: polygon(0% 0%, 100% 20%, 100% 80%, 0% 100%);
+            padding: 0 15px;
+        }
+        
+        .arrow-right {
+            display: flex;
+            align-items: center;
+            font-size: 2rem;
+            font-weight: 900;
+        }
+
+        .new-party {
+            flex: 1.2;
+            background: #fff;
+            border: 4px solid var(--ink-color);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+        .new-party::after {
+            content: "★";
+            position: absolute;
+            top: -15px;
+            right: -10px;
+            font-size: 2rem;
+            color: var(--accent-yellow);
+            text-shadow: 2px 2px 0 #000;
+        }
+
+        /* 5 Pillars Grid */
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 5px;
+            margin-bottom: 15px;
+        }
+        .pillar {
+            border: var(--border-width) solid var(--ink-color);
+            padding: 5px;
+            text-align: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+            background: #fff;
+        }
+        .pillar-icon {
+            font-size: 1.5rem;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        /* Isa Section */
+        .isa-section {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            background: #fff0f0;
+        }
+        .avatar {
+            font-size: 3rem;
+            line-height: 1;
+        }
+
+        /* Action Plan */
+        .action-list {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .action-list li {
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+        .highlight {
+            background: linear-gradient(to top, var(--accent-yellow) 50%, transparent 50%);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            font-size: 0.8rem;
+            margin-top: auto;
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
+        }
+
+        /* Tags */
+        .tag-danger {
+            background: var(--accent-red);
+            color: white;
+            padding: 2px 6px;
+            font-size: 0.7rem;
+            border-radius: 4px;
+            font-weight: bold;
+            border: 1px solid #000;
+        }
+
+        /* Print Specifics */
+        @media print {
+            body {
+                background: none;
+                -webkit-print-color-adjust: exact;
+            }
+            .page {
+                margin: 0;
+                box-shadow: none;
+                width: 100%;
+                height: 100vh; /* Adjust for browser margins */
+                page-break-after: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page">
+    <header>
+        <div style="font-size: 0.9rem; font-weight: bold; margin-bottom:5px;">いさ進一チャンネル 緊急生配信まとめ</div>
+        <h1>公明党、解党的出直し。<br>「中道改革」の新党へ</h1>
+        <div class="subtitle">2026.01.15 緊急生配信 要約＆アクションプラン</div>
+    </header>
+
+    <div class="box">
+        <div class="box-title">何が起きる？ 「合併」ではなく「新結成」</div>
+        <div style="font-size: 0.9rem; margin-bottom: 10px; font-weight: bold; text-align: center;">
+            <span class="tag-danger">重要</span> 立憲民主党との「野合」ではありません。理念が合う人だけが集まります。
+        </div>
+        
+        <div class="diagram-container">
+            <div style="display:flex; flex-direction:column; gap:5px; flex:1;">
+                <div class="party-block box" style="background:#fff; margin:0;">
+                    <span style="font-size:0.8rem;">既存の</span><br>公明党<br><span style="font-size:0.7rem;">(解散)</span>
+                </div>
+                <div class="party-block box" style="background:#fff; margin:0;">
+                    <span style="font-size:0.8rem;">既存の</span><br>立憲<br><span style="font-size:0.7rem;">(解散)</span>
+                </div>
+            </div>
+
+            <div class="arrow-right">➡</div>
+
+            <div class="box filter-zone" style="margin:0; box-shadow:none; border:2px solid black;">
+                <div style="font-size:1.2rem; font-weight:900; margin-bottom:5px;">5つの柱</div>
+                <div style="font-size:0.7rem; text-align:center; line-height:1.2;">
+                    これに賛成<br>できない人は<br>入れません
+                    <div style="margin-top:5px; border-top:1px solid white; padding-top:2px;">
+                        ❌ 極左<br>❌ 非現実的
+                    </div>
+                </div>
+            </div>
+
+            <div class="arrow-right">➡</div>
+
+            <div class="new-party box" style="margin:0;">
+                <div style="font-size:0.9rem; font-weight:bold; color:var(--accent-blue);">NEW</div>
+                <div style="font-size:1.3rem; font-weight:900;">新・中道党</div>
+                <div style="font-size:0.8rem; margin-top:5px;">(名称未定)</div>
+                <div style="font-size:0.7rem; margin-top:5px;">現実的な平和と<br>生活を守る</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="box">
+        <div class="box-title" style="background:var(--accent-blue);">新党が掲げる「5つの約束」</div>
+        <div class="pillars-grid">
+            <div class="pillar">
+                <span class="pillar-icon">🏥</span>
+                <div>安心の<br>社会保障</div>
+            </div>
+            <div class="pillar">
+                <span class="pillar-icon">🤝</span>
+                <div>多様性を<br>認める社会</div>
+            </div>
+            <div class="pillar">
+                <span class="pillar-icon">💰</span>
+                <div>1人あたり<br>GDP向上</div>
+            </div>
+            <div class="pillar">
+                <span class="pillar-icon">🛡️</span>
+                <div>現実的な<br>外交・防衛</div>
+            </div>
+            <div class="pillar">
+                <span class="pillar-icon">🧹</span>
+                <div>徹底した<br>政治改革</div>
+            </div>
+        </div>
+        <p style="font-size:0.8rem; margin:0; text-align:center;">
+            ※原発即時ゼロや、自衛隊違憲を唱える人はこの船には乗れません。
+        </p>
+    </div>
+
+    <div class="box isa-section">
+        <div class="avatar">😢➡🔥</div>
+        <div style="flex:1;">
+            <div style="font-weight:900; font-size:1.1rem; margin-bottom:5px;">いさ進一氏の決断</div>
+            <p style="font-size:0.9rem; margin:0; line-height:1.4;">
+                地元（小選挙区）を離れ、<span class="highlight">「比例代表」へ転出</span>します。<br>
+                党全体の勝利のため、苦渋の決断をしました。<br>
+                <small>「地元への感謝と、これからも大切にする想いは変わりません」</small>
+            </p>
+        </div>
+    </div>
+
+    <div class="box" style="border-color: var(--accent-red); background: #fff5f5;">
+        <div class="box-title" style="background: var(--accent-red);">支持者が起こすべきアクション</div>
+        <ul class="action-list">
+            <li>
+                <span style="font-size:1.2rem;">🗣️</span> 
+                <span class="highlight">誤解を解く</span><br>
+                <small>「立憲との合併じゃない。新しい理念の元での再出発だ」と伝えよう。</small>
+            </li>
+            <li style="margin-top:10px;">
+                <span style="font-size:1.2rem;">🗳️</span> 
+                <span class="highlight">いさ氏を比例で支える</span><br>
+                <small>小選挙区にいなくても、いさ進一と新党への熱い支援を。</small>
+            </li>
+            <li style="margin-top:10px;">
+                <span style="font-size:1.2rem;">🧘</span> 
+                <span class="highlight">冷静に事実を見る</span><br>
+                <small>感情的な「野合批判」に流されず、5つの柱の正しさを訴えよう。</small>
+            </li>
+        </ul>
+    </div>
+
+    <footer>
+        <p>本資料はいさ進一氏の動画内容を元にAIが要約・作成したものです。</p>
+    </footer>
+</div>
+
+<script>
+    // 自動的に印刷ダイアログを開く（不要なら削除）
+    // window.onload = function() { window.print(); }
+</script>
+
+</body>
+</html>
