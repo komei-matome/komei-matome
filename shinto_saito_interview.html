@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
@@ -34,12 +34,13 @@
         }
 
         .container {
-            max-width: 600px;
+            max-width: 900px; /* PC向けに幅を拡張 */
             margin: 0 auto;
             background: #fff;
             min-height: 100vh;
             border-left: 2px solid #ddd;
             border-right: 2px solid #ddd;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
         }
 
         /* --- HEADER --- */
@@ -107,19 +108,44 @@
             box-shadow: 4px 4px 0 #000;
         }
 
+        /* --- GRID LAYOUTS (Responsive) --- */
+        .grid-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        @media (min-width: 768px) {
+            .grid-wrapper {
+                display: grid;
+                grid-template-columns: 1fr 1fr; /* PC・タブレットで2列 */
+                align-items: start;
+            }
+        }
+
         /* --- QA CARDS --- */
         .qa-card {
             background: #fff;
             border: var(--border);
             box-shadow: var(--shadow);
             border-radius: 15px;
-            margin-bottom: 25px;
             overflow: hidden;
             transition: transform 0.2s;
+            height: 100%; /* グリッド内で高さを合わせる */
+            display: flex;
+            flex-direction: column;
         }
         .qa-card:active {
             transform: translate(2px, 2px);
             box-shadow: 3px 3px 0 #000;
+        }
+        
+        /* PCでのホバーエフェクト */
+        @media (hover: hover) {
+            .qa-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 7px 7px 0 #1a1a1a;
+            }
         }
 
         .qa-question {
@@ -147,6 +173,7 @@
         .qa-answer {
             padding: 20px;
             font-weight: 700;
+            flex-grow: 1; /* 内容量に応じて下部を伸ばす */
         }
 
         .marker {
@@ -236,23 +263,16 @@
         }
 
         /* --- ACTION PLAN --- */
-        .action-box {
-            background: #fff3cd;
-            border: var(--border);
-            padding: 20px;
-            border-radius: 10px;
+        .action-step {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
         
-        .action-step {
-            margin-bottom: 20px;
-        }
-        .action-step:last-child {
-            margin-bottom: 0;
-        }
         .step-title {
             font-weight: 900;
             font-size: 1.1rem;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -263,11 +283,14 @@
         .step-desc {
             background: #fff;
             border: 2px solid #000;
-            padding: 10px;
+            padding: 15px;
             border-radius: 8px;
             font-size: 0.95rem;
             position: relative;
+            flex-grow: 1; /* 高さ合わせ */
+            box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
         }
+        
         .step-desc::before {
             content: "";
             position: absolute;
@@ -301,12 +324,14 @@
             padding: 15px;
             font-weight: bold;
             border-radius: 50px;
-            margin-top: 20px;
+            margin: 30px auto 0;
+            max-width: 400px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-            transition: opacity 0.2s;
+            transition: opacity 0.2s, transform 0.2s;
         }
         .video-btn:hover {
             opacity: 0.9;
+            transform: scale(1.02);
         }
 
         footer {
@@ -324,12 +349,12 @@
     <header>
         <div class="eyecatch-badge">緊急直撃！</div>
         <h1>公明党 斎藤代表が<br>激白した<br>「5つの真実」</h1>
-        <div class="subtitle">サブチャンネル動画 要約＆図解</div>
+        <div class="subtitle">公明サブチャン 動画要約＆図解</div>
     </header>
 
     <!-- INTRO -->
     <div class="section" style="text-align: center;">
-        <p style="font-weight: bold; font-size: 1.1rem;">
+        <p style="font-weight: bold; font-size: 1.2rem;">
             「新党を作るって本当？」<br>
             「立憲と合併するの？」<br>
             「公明党はなくなるの？」
@@ -345,82 +370,85 @@
     <div class="section">
         <div class="section-title"><span>Q&Aでわかる真実</span></div>
 
-        <!-- Q1 -->
-        <div class="qa-card">
-            <div class="qa-question">
-                <div class="q-mark">Q1</div>
-                <div>本当に新しい党を作るの？</div>
-            </div>
-            <div class="qa-answer">
-                <span class="marker">A. はい、本当です。</span><br>
-                公明党の衆議院議員は一度党を離れ、<strong style="color:var(--primary);">「中道（ちゅうどう）」</strong>という新しいチームを作ります。<br>
-                <br>
-                <small>※中道とは？<br>極端な右や左ではなく、「普通の人たちの生活や命」を最優先にする政治のこと。</small>
-            </div>
-        </div>
-
-        <!-- Q2 -->
-        <div class="qa-card">
-            <div class="qa-question">
-                <div class="q-mark">Q2</div>
-                <div>立憲民主党と合併するの？</div>
-            </div>
-            <div class="qa-answer">
-                <span class="marker" style="color:var(--danger);">A. いいえ！合併ではありません。</span><br>
-                立憲民主党という組織と合体するのではなく、<strong>「公明党の理念（5つの約束）」に賛成できる人だけ</strong>が、立憲を辞めて入ってくる形です。
-                
-                <div class="diagram-box">
-                    <div class="party-flow">
-                        <div class="party-block" style="background:#eee;">立憲民主党の議員たち</div>
-                        <div class="arrow-down">⬇</div>
-                        <div class="filter-funnel">
-                            <div>🚧 審査ゲート 🚧</div>
-                            <small>原発OK？ 安保法制OK？</small>
-                        </div>
-                        <div class="arrow-down">⬇</div>
-                        <div class="new-party-badge">
-                            新・中道党<br>
-                            <span style="font-size:0.8rem; color:#333;">(考えが合う人だけ！)</span>
-                        </div>
-                    </div>
-                    <p style="font-size:0.8rem; color:var(--danger); font-weight:bold; margin-bottom:0;">
-                        ❌ 反対ばかりする人は入れません
-                    </p>
+        <!-- Grid Wrapper for PC Layout -->
+        <div class="grid-wrapper">
+            <!-- Q1 -->
+            <div class="qa-card">
+                <div class="qa-question">
+                    <div class="q-mark">Q1</div>
+                    <div>本当に新しい党を作るの？</div>
+                </div>
+                <div class="qa-answer">
+                    <span class="marker">A. はい、本当です。</span><br>
+                    公明党の衆議院議員は一度党を離れ、<strong style="color:var(--primary);">「中道（ちゅうどう）」</strong>という新しいチームを作ります。<br>
+                    <br>
+                    <small>※中道とは？<br>極端な右や左ではなく、「普通の人たちの生活や命」を最優先にする政治のこと。</small>
                 </div>
             </div>
-        </div>
 
-        <!-- Q3 -->
-        <div class="qa-card">
-            <div class="qa-question">
-                <div class="q-mark">Q3</div>
-                <div>高市総理への嫌がらせ？</div>
-            </div>
-            <div class="qa-answer">
-                <span class="marker">A. 全く違います。</span><br>
-                代表は<strong>「そんな了見の狭いことはしない」</strong>と断言。<br>
-                良い政策は協力し、極端なこと（核武装など）は止める。そのために強いチームが必要だったのです。
-            </div>
-        </div>
-
-        <!-- Q4 -->
-        <div class="qa-card">
-            <div class="qa-question">
-                <div class="q-mark">Q4</div>
-                <div>公明党はなくなっちゃうの？</div>
-            </div>
-            <div class="qa-answer">
-                <span class="marker">A. なくなりません！安心してください。</span><br>
-                衆議院は新党になりますが、私たちの身近な議員はそのままです。
-                
-                <div class="survival-check">
-                    <div class="check-item item-change">
-                        <strong>衆議院</strong><br>
-                        ➡ 新党へ
+            <!-- Q2 -->
+            <div class="qa-card" style="grid-row: span 2;">
+                <div class="qa-question">
+                    <div class="q-mark">Q2</div>
+                    <div>立憲民主党と合併するの？</div>
+                </div>
+                <div class="qa-answer">
+                    <span class="marker" style="color:var(--danger);">A. いいえ！合併ではありません。</span><br>
+                    立憲民主党という組織と合体するのではなく、<strong>「公明党の理念（5つの約束）」に賛成できる人だけ</strong>が、立憲を辞めて入ってくる形です。
+                    
+                    <div class="diagram-box">
+                        <div class="party-flow">
+                            <div class="party-block" style="background:#eee;">立憲民主党の議員たち</div>
+                            <div class="arrow-down">⬇</div>
+                            <div class="filter-funnel">
+                                <div>🚧 審査ゲート 🚧</div>
+                                <small>原発OK？ 安保法制OK？</small>
+                            </div>
+                            <div class="arrow-down">⬇</div>
+                            <div class="new-party-badge">
+                                新・中道党<br>
+                                <span style="font-size:0.8rem; color:#333;">(考えが合う人だけ！)</span>
+                            </div>
+                        </div>
+                        <p style="font-size:0.8rem; color:var(--danger); font-weight:bold; margin-bottom:0;">
+                            ❌ 反対ばかりする人は入れません
+                        </p>
                     </div>
-                    <div class="check-item item-ok">
-                        <strong>市議会・参院</strong><br>
-                        ➡ 公明党のまま
+                </div>
+            </div>
+
+            <!-- Q3 -->
+            <div class="qa-card">
+                <div class="qa-question">
+                    <div class="q-mark">Q3</div>
+                    <div>高市総理への嫌がらせ？</div>
+                </div>
+                <div class="qa-answer">
+                    <span class="marker">A. 全く違います。</span><br>
+                    代表は<strong>「そんな了見の狭いことはしない」</strong>と断言。<br>
+                    良い政策は協力し、極端なこと（核武装など）は止める。そのために強いチームが必要だったのです。
+                </div>
+            </div>
+
+            <!-- Q4 -->
+            <div class="qa-card">
+                <div class="qa-question">
+                    <div class="q-mark">Q4</div>
+                    <div>公明党はなくなっちゃうの？</div>
+                </div>
+                <div class="qa-answer">
+                    <span class="marker">A. なくなりません！安心してください。</span><br>
+                    衆議院は新党になりますが、私たちの身近な議員はそのままです。
+                    
+                    <div class="survival-check">
+                        <div class="check-item item-change">
+                            <strong>衆議院</strong><br>
+                            ➡ 新党へ
+                        </div>
+                        <div class="check-item item-ok">
+                            <strong>市議会・参院</strong><br>
+                            ➡ 公明党のまま
+                        </div>
                     </div>
                 </div>
             </div>
@@ -430,47 +458,50 @@
     <!-- ACTION PLAN -->
     <div class="section" style="background-color: #fff9e6;">
         <div class="section-title"><span>支持者のアクション</span></div>
-        <p style="text-align: center; margin-bottom: 20px;">
+        <p style="text-align: center; margin-bottom: 30px;">
             斎藤代表の「ホンネ」を聞いて、<br>私たちができること🍚
         </p>
 
-        <div class="action-step">
-            <div class="step-title">
-                <span class="step-icon">🗣️</span>
-                1. 「乗っ取り」不安を解消する
+        <!-- Grid Wrapper for Action Plan -->
+        <div class="grid-wrapper">
+            <div class="action-step">
+                <div class="step-title">
+                    <span class="step-icon">🗣️</span>
+                    1. 「乗っ取り」不安を解消する
+                </div>
+                <div class="step-desc">
+                    友人に「立憲に吸収されるんじゃないよ。<strong>公明党の考えに賛同する人を受け入れる側</strong>なんだよ」と教えてあげてください。
+                </div>
             </div>
-            <div class="step-desc">
-                友人に「立憲に吸収されるんじゃないよ。<strong>公明党の考えに賛同する人を受け入れる側</strong>なんだよ」と教えてあげてください。
-            </div>
-        </div>
 
-        <div class="action-step">
-            <div class="step-title">
-                <span class="step-icon">🙅</span>
-                2. 「高市おろし」の噂を否定
+            <div class="action-step">
+                <div class="step-title">
+                    <span class="step-icon">🙅</span>
+                    2. 「高市おろし」の噂を否定
+                </div>
+                <div class="step-desc">
+                    「代表は『足を引っ張りたいわけじゃない』とはっきり言ってたよ。日本の平和を守るための決断なんだ」と伝えましょう。
+                </div>
             </div>
-            <div class="step-desc">
-                「代表は『足を引っ張りたいわけじゃない』とはっきり言ってたよ。日本の平和を守るための決断なんだ」と伝えましょう。
-            </div>
-        </div>
 
-        <div class="action-step">
-            <div class="step-title">
-                <span class="step-icon">👵</span>
-                3. 高齢の方へ安心を届ける
+            <div class="action-step">
+                <div class="step-title">
+                    <span class="step-icon">👵</span>
+                    3. 高齢の方へ安心を届ける
+                </div>
+                <div class="step-desc">
+                    「<strong>地元の市議さんは公明党のままだから大丈夫！</strong>党がなくなるわけじゃないよ」と優しく伝えてください。
+                </div>
             </div>
-            <div class="step-desc">
-                「<strong>地元の市議さんは公明党のままだから大丈夫！</strong>党がなくなるわけじゃないよ」と優しく伝えてください。
-            </div>
-        </div>
 
-        <div class="action-step">
-            <div class="step-title">
-                <span class="step-icon">📲</span>
-                4. 動画とこの記事をシェア
-            </div>
-            <div class="step-desc">
-                代表のリラックスした本音が聞けるこの動画は、不安な心を一番軽くしてくれます。URLをシェアしましょう！
+            <div class="action-step">
+                <div class="step-title">
+                    <span class="step-icon">📲</span>
+                    4. 動画とこの記事をシェア
+                </div>
+                <div class="step-desc">
+                    代表のリラックスした本音が聞けるこの動画は、不安な心を一番軽くしてくれます。URLをシェアしましょう！
+                </div>
             </div>
         </div>
 
