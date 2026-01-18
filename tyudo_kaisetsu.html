@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>世界一わかりやすい「中道主義」図解 | 公明党動画要約まとめ</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap');
+
+        :root {
+            --primary: #005eb0;
+            --accent: #facc15;
+            --bg: #f3f4f6;
+            --text: #1f2937;
+            --card-bg: #ffffff;
+            --success: #10b981;
+            --danger: #ef4444;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Hero Header */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, #004080 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        header .icon {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            font-weight: 900;
+            line-height: 1.3;
+        }
+
+        .subtitle {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            background: rgba(255,255,255,0.2);
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+
+        /* Container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px 15px 40px;
+        }
+
+        /* Back Button */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 900;
+            margin: 30px 0 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 10px;
+        }
+
+        /* Card */
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px solid #e5e7eb;
+        }
+
+        /* Comparison Grid */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        @media (min-width: 600px) {
+            .comparison-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .bad-example {
+            background: #fef2f2;
+            border: 2px dashed var(--danger);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            position: relative;
+        }
+        .bad-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--danger);
+            color: white;
+            padding: 4px 12px;
+            font-weight: bold;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        .good-example {
+            background: #ecfdf5;
+            border: 2px solid var(--success);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            position: relative;
+        }
+        .good-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--success);
+            color: white;
+            padding: 4px 12px;
+            font-weight: bold;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        .visual-icon {
+            font-size: 2.5rem;
+            display: block;
+            margin: 10px 0;
+        }
+
+        .example-title {
+            font-weight: 900;
+            font-size: 1.1rem;
+            margin: 10px 0;
+        }
+
+        /* Drone View */
+        .drone-view {
+            height: 180px;
+            background: linear-gradient(to bottom, #87CEEB 60%, #e5e7eb 60%);
+            border: 2px solid var(--text);
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .drone {
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2.5rem;
+            z-index: 10;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-8px); }
+        }
+
+        .ground-conflict {
+            position: absolute;
+            bottom: 15px;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            font-size: 1.5rem;
+        }
+
+        .beam {
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 80px solid transparent;
+            border-right: 80px solid transparent;
+            border-top: 80px solid rgba(0, 94, 176, 0.2);
+        }
+
+        /* Triangle Diagram */
+        .triangle-diagram {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .triangle-base {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 400px;
+            gap: 10px;
+        }
+
+        .opinion-box {
+            border: 2px solid var(--text);
+            padding: 12px;
+            background: #fff;
+            flex: 1;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+        .opinion-box.red { border-color: var(--danger); }
+        .opinion-box.blue { border-color: var(--primary); }
+
+        .arrow-combine {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--text);
+        }
+
+        .solution-box {
+            background: var(--accent);
+            border: 3px solid var(--text);
+            padding: 20px;
+            text-align: center;
+            font-weight: 900;
+            width: 90%;
+            max-width: 350px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(250, 204, 21, 0.4);
+        }
+        .solution-box small {
+            font-weight: normal;
+            font-size: 0.85rem;
+        }
+
+        /* Q&A */
+        .qa-item {
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+        .qa-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .question {
+            font-weight: 900;
+            font-size: 1rem;
+            color: var(--danger);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .q-badge {
+            background: var(--danger);
+            color: #fff;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+
+        .answer {
+            background: #f9fafb;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+            margin-left: 10px;
+        }
+
+        /* Check List */
+        .check-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .check-list li {
+            background: #fff;
+            margin-bottom: 10px;
+            padding: 15px;
+            border-left: 4px solid var(--primary);
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            font-weight: bold;
+        }
+
+        /* Summary Card */
+        .summary-card {
+            background: var(--primary);
+            color: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: 20px;
+        }
+        .summary-card .check-list li {
+            background: rgba(255,255,255,0.15);
+            border-left-color: var(--accent);
+            color: white;
+        }
+        .summary-message {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* Highlight */
+        .highlight {
+            background: linear-gradient(transparent 60%, var(--accent) 60%);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        .home-btn {
+            display: inline-block;
+            background: var(--text);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: background 0.2s;
+        }
+        .home-btn:hover {
+            background: var(--primary);
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="icon">⚖️</div>
+    <h1>世界一わかりやすい<br>「中道主義」</h1>
+    <div class="subtitle">真ん中じゃなくて「上」を行く！</div>
+</header>
+
+<div class="container">
+    <a href="index.html" class="back-link">← トップに戻る</a>
+
+    <!-- Section 1: 誤解を解く -->
+    <div class="section-title">
+        <span>🤔</span> よくあるカン違い
+    </div>
+
+    <div class="card">
+        <div class="comparison-grid">
+            <div class="bad-example">
+                <div class="bad-badge">あやまり</div>
+                <span class="visual-icon">🦇</span>
+                <div class="example-title">コウモリ野郎？</div>
+                <p>「右でもない、左でもない…<br>どっちつかずでフラフラしてる人？」</p>
+                <div style="color:var(--danger); font-weight:900; font-size:1.3rem;">❌ ブブー！</div>
+            </div>
+
+            <div class="good-example">
+                <div class="good-badge">せいかい</div>
+                <span class="visual-icon">🏔️</span>
+                <div class="example-title">登山ガイド！</div>
+                <p>「右の道は崖崩れ、左の道は行き止まり…<br><strong>この新しい道を作ろう！</strong>」</p>
+                <div style="color:var(--success); font-weight:900; font-size:1.3rem;">⭕ ピンポン！</div>
+            </div>
+        </div>
+        <p style="text-align:center; margin-top:20px; font-weight:bold;">
+            中道は「足して2で割る」妥協ではありません。<br>
+            <span class="highlight">「一番難しいけど、一番みんなが助かる道」</span>を探すことです。
+        </p>
+    </div>
+
+    <!-- Section 2: ドローン視点 -->
+    <div class="section-title">
+        <span>🚁</span> 中道＝ドローン視点
+    </div>
+
+    <div class="card">
+        <p>
+            右の人と左の人が、壁を挟んでケンカしています。<br>
+            地面に立っていると、お互いしか見えません。<br>
+            でも、<strong>中道主義は「空へ」飛びます。</strong>
+        </p>
+
+        <div class="drone-view">
+            <div class="drone">🚁</div>
+            <div class="beam"></div>
+            <div class="ground-conflict">
+                <div>😡 <small>右だ！</small></div>
+                <div>🚧</div>
+                <div>🤬 <small>左だ！</small></div>
+            </div>
+        </div>
+
+        <p style="font-weight:bold; text-align:center;">
+            「あ、右の主張もわかるし、左の心配もわかる。<br>
+            だったら、上から橋をかければ両方通れるじゃん！」
+        </p>
+        <p>
+            全体を見渡して、<strong>対立を乗り越える解決策</strong>を見つける。<br>
+            これを「高い次元での統合（アウフヘーベン）」と言います。
+        </p>
+    </div>
+
+    <!-- Section 3: 具体例 -->
+    <div class="section-title">
+        <span>💡</span> 例えばどういうこと？
+    </div>
+
+    <div class="card">
+        <div class="triangle-diagram">
+            <div class="triangle-base">
+                <div class="opinion-box red">
+                    <strong>A案：経済優先</strong><br>
+                    「工場ガンガン動かせ！<br>環境？知らん！」
+                </div>
+                <div class="opinion-box blue">
+                    <strong>B案：環境優先</strong><br>
+                    「自然を守れ！<br>工場なんて全部止めろ！」
+                </div>
+            </div>
+            <div class="arrow-combine">⚡ 激突 ⚡</div>
+            <div style="font-size:1.8rem;">⬇</div>
+            <div class="solution-box">
+                <div>C案：中道の答え</div>
+                「環境に優しい<br>最新技術で経済を回そう！」<br>
+                <small>(グリーン・ニューディール)</small>
+            </div>
+        </div>
+        <p style="text-align:center;">
+            ケンカを止めるだけじゃなく、<br>
+            <strong>AとBの良いところを合わせた「最強のC」</strong>を生み出します。
+        </p>
+    </div>
+
+    <!-- Section 4: Q&A -->
+    <div class="section-title">
+        <span>⚔️</span> いじわるな質問への答え
+    </div>
+
+    <div class="card">
+        <div class="qa-item">
+            <div class="question">
+                <span class="q-badge">ツッコミ</span>
+                結局、八方美人で何も決められないんじゃない？
+            </div>
+            <div class="answer">
+                いいえ、<strong>「生命と生活を守る」という絶対の基準</strong>があります。イデオロギーのために人の命が犠牲になるような時は、誰よりも頑固に「NO」と言います。
+            </div>
+        </div>
+
+        <div class="qa-item">
+            <div class="question">
+                <span class="q-badge">ツッコミ</span>
+                みんなの意見を聞いてたら、決めるのが遅くない？
+            </div>
+            <div class="answer">
+                少し時間はかかるかもしれません。でも、力ずくで決めたことは「敵」を作り、すぐにひっくり返されます。<br>
+                <strong>「みんなが納得した決定」は長持ちする</strong>ので、結果的に一番早道なんです。
+            </div>
+        </div>
+
+        <div class="qa-item">
+            <div class="question">
+                <span class="q-badge">ツッコミ</span>
+                理想論でしょ？現実はそんな甘くないよ。
+            </div>
+            <div class="answer">
+                むしろ逆です！<br>
+                「右の理想」も「左の理想」も現実に合わないから対立します。<strong>現実のド真ん中で、泥臭く調整して解決策を作る</strong>のが中道です。一番リアリスト（現実主義）なんです。
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 5: まとめ -->
+    <div class="section-title">
+        <span>📝</span> 今日のまとめ
+    </div>
+
+    <div class="summary-card">
+        <ul class="check-list">
+            <li>✅ 中道は、真ん中ではなく<strong>「高いところ」</strong>にいる。</li>
+            <li>✅ 誰かの味方ではなく、<strong>「人間の生命・生活」</strong>の味方。</li>
+            <li>✅ 批判するより、<strong>「合意形成（納得できる答え）」</strong>を作るのが仕事。</li>
+            <li>✅ 一番汗をかく、地味だけど<strong>カッコイイ役割</strong>。</li>
+        </ul>
+        <div class="summary-message">
+            だから今、日本には「中道」が必要なんです🍚
+        </div>
+    </div>
+
+    <footer>
+        <p>Created by 中道応援アカウント</p>
+        <a href="index.html" class="home-btn">トップに戻る</a>
+    </footer>
+</div>
+
+</body>
+</html>
