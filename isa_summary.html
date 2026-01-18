@@ -213,18 +213,125 @@
             border: 1px solid #000;
         }
 
-        /* Print Specifics */
+        /* Responsive - Mobile */
+        @media (max-width: 599px) {
+            .page {
+                width: 100%;
+                height: auto;
+                margin: 0;
+                padding: 15px;
+                box-shadow: none;
+            }
+            header {
+                padding: 15px;
+                margin-bottom: 15px;
+            }
+            h1 {
+                font-size: 1.4rem;
+            }
+            .diagram-container {
+                flex-direction: column;
+                height: auto;
+                gap: 10px;
+            }
+            .diagram-container > div {
+                width: 100%;
+            }
+            .filter-zone {
+                clip-path: none;
+                border-radius: 10px;
+                padding: 15px;
+            }
+            .arrow-right {
+                transform: rotate(90deg);
+                font-size: 1.5rem;
+            }
+            .pillars-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .pillar:last-child {
+                grid-column: span 2;
+            }
+            nav {
+                margin-bottom: 10px !important;
+            }
+        }
+
+        /* Tablet */
+        @media (min-width: 600px) and (max-width: 899px) {
+            .page {
+                width: 95%;
+                height: auto;
+                padding: 20px;
+            }
+        }
+
+        /* PC */
+        @media (min-width: 900px) {
+            .page {
+                width: 210mm;
+                max-width: 900px;
+            }
+            header {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            .box {
+                padding: 15px;
+            }
+        }
+
+        /* Print Specifics - A4 */
         @media print {
             body {
                 background: none;
                 -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
             }
             .page {
                 margin: 0;
                 box-shadow: none;
                 width: 100%;
-                height: 100vh; /* Adjust for browser margins */
+                height: auto;
+                padding: 10mm;
                 page-break-after: avoid;
+            }
+            nav {
+                display: none !important;
+            }
+            header {
+                padding: 10px;
+                margin-bottom: 10px;
+                background: var(--accent-yellow) !important;
+            }
+            h1 {
+                font-size: 1.4rem;
+            }
+            .box {
+                box-shadow: none;
+                margin-bottom: 8px;
+                padding: 8px;
+            }
+            .diagram-container {
+                height: 140px;
+            }
+            .pillars-grid {
+                gap: 3px;
+            }
+            .pillar {
+                padding: 3px;
+                font-size: 0.7rem;
+            }
+            .pillar-icon {
+                font-size: 1.2rem;
+            }
+            .isa-section {
+                padding: 10px;
+            }
+            .avatar {
+                font-size: 2rem;
             }
         }
     </style>
