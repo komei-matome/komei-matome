@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【炎上覚悟】立憲×公明 代表対談まとめ</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap');
+
+        :root {
+            --primary: #005eb0; /* Komeito Blue */
+            --rikken-blue: #004098; /* Rikken Blue approx */
+            --fusion: linear-gradient(135deg, #005eb0 0%, #004098 100%);
+            --accent: #ffcc00;
+            --danger: #ff4d4d;
+            --bg: #f5f7fa;
+            --text: #333;
+            --card-bg: #fff;
+            --border: 3px solid #1a1a1a;
+            --shadow: 4px 4px 0px #1a1a1a;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: var(--card-bg);
+            border: var(--border);
+            box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
+            padding: 0;
+            overflow: hidden;
+        }
+
+        /* HEADER */
+        header {
+            background: var(--fusion);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-bottom: var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Sparkles effect */
+        header::before {
+            content: "⚡"; position: absolute; top: 10%; left: 10%; font-size: 2rem; opacity: 0.3; transform: rotate(-20deg);
+        }
+        header::after {
+            content: "🤝"; position: absolute; bottom: 10%; right: 10%; font-size: 3rem; opacity: 0.5; transform: rotate(10deg);
+        }
+
+        .tag-badge {
+            background: var(--danger);
+            color: #fff;
+            padding: 5px 10px;
+            font-weight: 900;
+            font-size: 0.9rem;
+            display: inline-block;
+            transform: rotate(-2deg);
+            border: 2px solid #fff;
+            box-shadow: 3px 3px 0 rgba(0,0,0,0.3);
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 900;
+            margin: 5px 0;
+            text-shadow: 2px 2px 0 #000;
+            line-height: 1.2;
+        }
+        
+        .vs-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            background: #000;
+            display: inline-block;
+            padding: 5px 15px;
+            margin-top: 10px;
+        }
+
+        /* CHAT STYLE SECTION */
+        .chat-section {
+            padding: 20px;
+            background: #fff;
+        }
+
+        .chat-bubble {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            align-items: flex-start;
+        }
+        
+        .chat-right {
+            flex-direction: row-reverse;
+        }
+
+        .face-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #eee;
+            border: 2px solid #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+        .saito { background: #e3f2fd; }
+        .noda { background: #e8eaf6; }
+
+        .bubble-content {
+            background: #fff;
+            border: 2px solid #000;
+            border-radius: 15px;
+            padding: 15px;
+            position: relative;
+            box-shadow: 3px 3px 0 #ccc;
+            flex: 1;
+        }
+        
+        .bubble-content::after {
+            content: "";
+            position: absolute;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border: 10px solid transparent;
+        }
+        
+        .chat-bubble:not(.chat-right) .bubble-content::after {
+            left: -20px;
+            border-right-color: #000;
+        }
+        .chat-right .bubble-content::after {
+            right: -20px;
+            border-left-color: #000;
+        }
+
+        .speaker-name {
+            font-size: 0.8rem;
+            font-weight: 900;
+            margin-bottom: 5px;
+            color: #666;
+            display: block;
+        }
+
+        .highlight-text {
+            background: linear-gradient(transparent 70%, var(--accent) 70%);
+            font-weight: bold;
+        }
+
+        /* KEY POINTS GRID */
+        .points-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            padding: 20px;
+            background: #f0f0f0;
+            border-top: var(--border);
+            border-bottom: var(--border);
+        }
+        
+        @media (min-width: 600px) {
+            .points-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .point-card {
+            background: #fff;
+            border: 2px solid #000;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 4px 4px 0 #999;
+        }
+
+        .point-title {
+            font-weight: 900;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* INFO BOX */
+        .info-box {
+            background: #fff3cd;
+            border: 2px dashed #d69e2e;
+            padding: 15px;
+            margin: 20px;
+            text-align: center;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        /* BUTTON */
+        .youtube-btn {
+            display: block;
+            background: #c4302b;
+            color: white;
+            text-decoration: none;
+            padding: 15px;
+            text-align: center;
+            font-weight: 900;
+            margin: 20px;
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+        }
+        .youtube-btn:hover {
+            transform: scale(1.02);
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: #fff;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- ナビゲーション -->
+    <nav style="padding: 15px 20px; border-bottom: 1px solid #ddd; background: #fff;">
+        <a href="index.html" style="display: inline-flex; align-items: center; gap: 5px; text-decoration: none; color: var(--text); font-weight: bold; font-size: 0.9rem; padding: 8px 15px; border: var(--border); border-radius: 25px; background: #fff; box-shadow: 3px 3px 0 rgba(0,0,0,0.2); transition: transform 0.1s;">
+            ← 記事一覧に戻る
+        </a>
+    </nav>
+
+    <header>
+        <div class="tag-badge">炎上覚悟🔥</div>
+        <h1>なぜ組んだ！？<br>代表対談 SP</h1>
+        <div class="vs-title">斎藤代表 × 野田代表</div>
+    </header>
+
+    <div class="chat-section">
+        <!-- Q1 -->
+        <div class="chat-bubble">
+            <div class="face-icon">🤔</div>
+            <div class="bubble-content">
+                <span class="speaker-name">ネットの声</span>
+                「中道改革連合」って名前、長すぎない？<br>
+                「中核連」とか怖い略称で呼ばれてるけど…
+            </div>
+        </div>
+
+        <div class="chat-bubble chat-right">
+            <div class="face-icon saito">🍚</div>
+            <div class="bubble-content">
+                <span class="speaker-name">斎藤代表</span>
+                公式の略称は<span class="highlight-text" style="font-size:1.2rem;">「中道（ちゅうどう）」</span>です！<br>
+                シンプルにこれで呼んでください。<br>
+                右でも左でもない、一番太い道を行くという意味です。
+            </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="chat-bubble">
+            <div class="face-icon">😡</div>
+            <div class="bubble-content">
+                <span class="speaker-name">ネットの声</span>
+                野合（やごう）だろ！選挙目当てで急にくっついたんだろ！
+            </div>
+        </div>
+
+        <div class="chat-bubble chat-right">
+            <div class="face-icon noda">👔</div>
+            <div class="bubble-content">
+                <span class="speaker-name">野田代表</span>
+                違います。解散が急だったから急いだだけで、<br>
+                <span class="highlight-text">「核兵器を持たない」「戦争をさせない」</span><br>
+                という一番大事なルールを守るために、以前から話し合ってきました。
+            </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="chat-bubble chat-right">
+            <div class="face-icon saito">🍚</div>
+            <div class="bubble-content">
+                <span class="speaker-name">斎藤代表</span>
+                今、核武装論とか、平和憲法を変えようとか、危ない議論が進んでいます。<br>
+                それを止めるには、バラバラじゃダメなんです。<br>
+                <span class="highlight-text">平和のためのタッグ</span>なんです。
+            </div>
+        </div>
+    </div>
+
+    <!-- POINTS GRID -->
+    <div class="points-grid">
+        <div class="point-card">
+            <div class="point-title">🚫 核へのブレーキ</div>
+            <p style="margin:0; font-size:0.9rem;">
+                高市氏や維新の一部にある「核共有」論に断固反対。<br>
+                <strong>「絶対に核を持たせない」</strong>という強い一致。
+            </p>
+        </div>
+        <div class="point-card">
+            <div class="point-title">💰 生活を守る</div>
+            <p style="margin:0; font-size:0.9rem;">
+                <strong>食料品の消費税を安く（0%へ）！</strong><br>
+                政府の埋蔵金などを活用して実現を目指す。
+            </p>
+        </div>
+        <div class="point-card">
+            <div class="point-title">🤝 公明党の魂</div>
+            <p style="margin:0; font-size:0.9rem;">
+                新党になっても、公明党の立党精神（大衆とともに）は変わりません。<br>
+                <strong>中道＝公明党の理念の深化</strong>です。
+            </p>
+        </div>
+        <div class="point-card">
+            <div class="point-title">📛 名前は「中道」</div>
+            <p style="margin:0; font-size:0.9rem;">
+                テストに出ます！<br>
+                略称は「中道」。<br>
+                変な略称に惑わされないで！
+            </p>
+        </div>
+    </div>
+
+    <!-- INFO -->
+    <div class="info-box">
+        💡 結論：<br>
+        仲が悪かった二人が手を組むほど、<br>
+        今の「核武装論」や「極端な政治」は<br>
+        ヤバいということです。
+    </div>
+
+    <a href="https://www.youtube.com/watch?v=W9y-_EhjgLs" target="_blank" class="youtube-btn">
+        ▶ 動画で二人の本音を見る
+    </a>
+
+    <footer>
+        2026.01.18 中道改革連合チャンネル「代表対談」より要約<br>
+        ※AIによる要約です
+    </footer>
+</div>
+
+</body>
+</html>
