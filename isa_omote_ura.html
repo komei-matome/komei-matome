@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【完全版】中道改革連合 基本政策の真実</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap');
+
+        :root {
+            --bg-color: #f8f9fa;
+            --text-color: #2d3436;
+            --primary: #0984e3; /* 知的なブルー */
+            --accent: #fdcb6e; /* 警告・強調 */
+            --danger: #d63031;
+            --success: #00b894;
+            --card-bg: #ffffff;
+            --shadow: 0 10px 20px rgba(0,0,0,0.08);
+            --border-radius: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* HEADER */
+        header {
+            text-align: center;
+            padding: 40px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, #2d3436 100%);
+            color: white;
+            border-radius: 0 0 30px 30px;
+            margin: -20px -20px 40px -20px;
+            box-shadow: var(--shadow);
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 900;
+            margin: 10px 0;
+            text-shadow: 2px 2px 0 rgba(0,0,0,0.2);
+        }
+
+        .badge {
+            background: var(--accent);
+            color: #000;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        /* POLICY CARDS */
+        .policy-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            border-left: 6px solid var(--primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            opacity: 0.1;
+        }
+
+        .card-title {
+            font-size: 1.4rem;
+            font-weight: 900;
+            margin-bottom: 15px;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* COMPARISON TABLE */
+        .comparison-box {
+            background: #f1f2f6;
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+
+        .comp-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px dashed #ccc;
+        }
+        .comp-row:last-child { border-bottom: none; }
+
+        .party-name { font-weight: bold; font-size: 0.9rem; color: #666; }
+        .party-policy { font-weight: 900; font-size: 1rem; }
+        .policy-bad { color: var(--danger); }
+        .policy-good { color: var(--success); font-size: 1.2rem; }
+
+        /* ANSWER BOX (ISA'S VOICE) */
+        .isa-voice {
+            background: #e1f5fe;
+            border-radius: 12px;
+            padding: 15px;
+            margin-top: 20px;
+            position: relative;
+        }
+        .isa-voice::before {
+            content: "🗣️ いさ解説";
+            position: absolute;
+            top: -12px;
+            left: 15px;
+            background: var(--primary);
+            color: white;
+            padding: 2px 10px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        .isa-text {
+            font-size: 0.95rem;
+            font-weight: bold;
+            color: #0277bd;
+        }
+
+        /* REALISM CHECKLIST */
+        .realism-list {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+        }
+        .realism-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        .check-icon {
+            color: var(--success);
+            font-size: 1.2rem;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            color: #636e72;
+            font-size: 0.8rem;
+            margin-top: 40px;
+            padding-bottom: 20px;
+        }
+
+        /* Q&A Section */
+        .qa-section-title {
+            text-align: center;
+            font-weight: 900;
+            font-size: 1.5rem;
+            margin: 40px 0 20px;
+        }
+        
+        .qa-bubble {
+            background: #2d3436;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 20px 20px 20px 0;
+            margin-bottom: 10px;
+            display: inline-block;
+            max-width: 90%;
+            font-weight: bold;
+        }
+        .qa-answer-bubble {
+            background: var(--primary);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 20px 20px 0 20px;
+            margin-bottom: 30px;
+            margin-left: auto;
+            display: block;
+            max-width: 90%;
+            font-weight: bold;
+            position: relative;
+        }
+        .qa-answer-bubble::after {
+            content: "いさ進一";
+            position: absolute;
+            bottom: -20px;
+            right: 0;
+            color: #666;
+            font-size: 0.8rem;
+        }
+
+        /* Navigation */
+        .nav-bar {
+            padding: 15px 20px;
+            border-bottom: 1px solid #ddd;
+            background: #fff;
+            margin: -20px -20px 20px -20px;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: bold;
+            font-size: 0.9rem;
+            padding: 8px 15px;
+            border: 3px solid #1a1a1a;
+            border-radius: 25px;
+            background: #fff;
+            box-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+            transition: transform 0.1s;
+        }
+        .back-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 4px 4px 0 rgba(0,0,0,0.2);
+        }
+
+        .home-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: bold;
+            font-size: 0.9rem;
+            padding: 8px 15px;
+            border: 3px solid #1a1a1a;
+            border-radius: 25px;
+            background: #fff;
+            box-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+            transition: transform 0.1s;
+            margin-top: 15px;
+        }
+        .home-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 4px 4px 0 rgba(0,0,0,0.2);
+        }
+
+        /* Tablet */
+        @media (min-width: 600px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            .container {
+                padding: 25px;
+            }
+            header {
+                margin: -25px -25px 40px -25px;
+            }
+            .nav-bar {
+                margin: -25px -25px 20px -25px;
+            }
+        }
+
+        /* PC */
+        @media (min-width: 900px) {
+            .container {
+                max-width: 900px;
+                padding: 30px;
+            }
+            header {
+                padding: 50px 30px;
+                margin: -30px -30px 40px -30px;
+            }
+            .nav-bar {
+                margin: -30px -30px 20px -30px;
+            }
+            h1 {
+                font-size: 2.5rem;
+            }
+            .policy-card {
+                padding: 30px;
+            }
+            .card-title {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Print Styles - A4 */
+        @media print {
+            body {
+                background: white;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .nav-bar {
+                display: none;
+            }
+            .container {
+                max-width: 100%;
+                padding: 15px;
+            }
+            header {
+                padding: 20px;
+                margin: -15px -15px 20px -15px;
+                background: var(--primary) !important;
+                border-radius: 0;
+            }
+            h1 {
+                font-size: 1.5rem;
+                text-shadow: none;
+            }
+            .policy-card {
+                padding: 15px;
+                margin-bottom: 15px;
+                box-shadow: none;
+                break-inside: avoid;
+            }
+            .card-icon {
+                display: none;
+            }
+            .comparison-box {
+                padding: 10px;
+            }
+            .isa-voice {
+                padding: 10px;
+            }
+            .qa-bubble, .qa-answer-bubble {
+                max-width: 100%;
+                margin-bottom: 15px;
+            }
+            .home-btn {
+                display: none;
+            }
+            footer {
+                margin-top: 20px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <nav class="nav-bar">
+        <a href="index.html" class="back-link">← 記事一覧に戻る</a>
+    </nav>
+
+    <header>
+        <div class="badge">動画完全要約</div>
+        <h1>新党「中道改革連合」<br>政策の真実</h1>
+        <p>いさ進一が明かす「表と裏」の徹底解説</p>
+    </header>
+
+    <!-- POLICY 1: ECONOMY -->
+    <div class="policy-card">
+        <div class="card-icon">💰</div>
+        <div class="card-title">① 経済・税金</div>
+        <p>物価高対策、他党とは「覚悟」が違います。</p>
+        
+        <div class="comparison-box">
+            <div class="comp-row">
+                <span class="party-name">自民・維新・国民</span>
+                <span class="party-policy policy-bad">期間限定の減税</span>
+            </div>
+            <div class="comp-row" style="background:white; border-radius:8px; padding:10px; box-shadow:0 2px 5px rgba(0,0,0,0.1);">
+                <span class="party-name" style="color:var(--primary);">中道改革連合</span>
+                <span class="party-policy policy-good">食料品はずっと0%</span>
+            </div>
+        </div>
+
+        <div class="isa-voice">
+            <div class="isa-text">
+                「期間限定だと、終わった後に不景気になります。現場も混乱します。<br>
+                私たちは『ジャパン・ファンド』で5兆円の財源を作るから、<span style="background:linear-gradient(transparent 60%, #fff176 60%);">恒久的に0%</span>にできるんです！」
+            </div>
+        </div>
+    </div>
+
+    <!-- POLICY 2: DIPLOMACY & DEFENSE -->
+    <div class="policy-card" style="border-left-color: var(--success);">
+        <div class="card-icon">🛡️</div>
+        <div class="card-title" style="color:var(--success);">② 外交・安全保障</div>
+        <p>「立憲と組むと国が守れない？」そんな心配は無用でした。</p>
+
+        <ul class="realism-list">
+            <li class="realism-item"><span class="check-icon">✅</span> 集団的自衛権(安保法制)は合憲</li>
+            <li class="realism-item"><span class="check-icon">✅</span> 日米同盟を基軸にする</li>
+            <li class="realism-item"><span class="check-icon">✅</span> 辺野古移設は現実的に進める</li>
+            <li class="realism-item"><span class="check-icon">✅</span> 抑止力のための防衛費増はOK</li>
+        </ul>
+
+        <div class="isa-voice">
+            <div class="isa-text">
+                「一つ一つの事例（米艦防護など）を確認して、『これなら自衛権の範囲内だね』と立憲と完全に合意しました。<br>
+                政権を担うための<span style="background:linear-gradient(transparent 60%, #fff176 60%);">『現実的な合意』</span>ができたのは歴史的です。」
+            </div>
+        </div>
+    </div>
+
+    <!-- POLICY 3: CONSTITUTION -->
+    <div class="policy-card" style="border-left-color: var(--accent);">
+        <div class="card-icon">📜</div>
+        <div class="card-title" style="color:#d35400;">③ 憲法改正</div>
+        <p>逃げずに議論します。</p>
+
+        <div style="background:#fff3e0; padding:15px; border-radius:10px; font-weight:bold; text-align:center;">
+            議論の対象：<br>
+            「自衛隊の憲法上の位置づけ」など
+        </div>
+
+        <div class="isa-voice">
+            <div class="isa-text">
+                「あえて『自衛隊の位置づけ』を例示しました。これは自民党の穏健保守層へのメッセージでもあります。<br>
+                必要な改正はしっかり進める、という意思表示です。」
+            </div>
+        </div>
+    </div>
+
+    <!-- Q&A SECTION -->
+    <div class="qa-section-title">💬 いさ進一 アンサーまとめ</div>
+
+    <div class="qa-bubble">
+        Q. 結局、選挙のためだけの野合でしょ？
+    </div>
+    <div class="qa-answer-bubble">
+        A. 違います。選挙のためなら、わざわざ票が逃げるかもしれない「憲法」や「安保」の深い議論なんてしません。<br>
+        「表だけの握手」ではなく、**政策の根幹（裏側）まで詰め切った**からこその新党結成です。
+    </div>
+
+    <div class="qa-bubble">
+        Q. 「中道」ってどっちつかずじゃない？
+    </div>
+    <div class="qa-answer-bubble">
+        A. 「中道」は真ん中という意味ではありません。**「道に当たる（的中）」**という意味です。<br>
+        イデオロギーに囚われず、目の前の人を救うための「正解」を射抜く政治。それが中道です。
+    </div>
+
+    <footer>
+        2026.01.19 いさ進一チャンネル緊急配信より要約<br>
+        Created by 中道応援アカウント<br>
+        <a href="index.html" class="home-btn">← 記事一覧に戻る</a>
+    </footer>
+</div>
+
+</body>
+</html>
