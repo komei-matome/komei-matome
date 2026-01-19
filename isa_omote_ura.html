@@ -163,6 +163,33 @@
             font-size: 1.2rem;
         }
 
+        /* VIDEO CTA */
+        .video-cta {
+            background: linear-gradient(135deg, #c4302b 0%, #8b0000 100%);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: var(--border-radius);
+            margin: 30px 0;
+            box-shadow: var(--shadow);
+        }
+        .video-btn {
+            display: inline-block;
+            background: white;
+            color: #c4302b;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 900;
+            font-size: 1rem;
+            margin-top: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+        }
+        .video-btn:hover {
+            transform: scale(1.05);
+        }
+
         /* FOOTER */
         footer {
             text-align: center;
@@ -342,6 +369,9 @@
                 max-width: 100%;
                 margin-bottom: 15px;
             }
+            .video-cta {
+                display: none;
+            }
             .home-btn {
                 display: none;
             }
@@ -447,6 +477,15 @@
     <div class="qa-answer-bubble">
         A. 「中道」は真ん中という意味ではありません。**「道に当たる（的中）」**という意味です。<br>
         イデオロギーに囚われず、目の前の人を救うための「正解」を射抜く政治。それが中道です。
+    </div>
+
+    <!-- VIDEO CTA -->
+    <div class="video-cta">
+        <p style="font-weight:bold; margin:0 0 10px 0; font-size:1.1rem;">いさ進一氏の「熱弁」をフルで見る</p>
+        <p style="font-size:0.9rem; opacity:0.9; margin:0;">（26分間の緊急生配信です）</p>
+        <a href="https://www.youtube.com/watch?v=-4fvt_i3DI4" target="_blank" class="video-btn">
+            ▶ YouTubeで動画を再生
+        </a>
     </div>
 
     <footer>
