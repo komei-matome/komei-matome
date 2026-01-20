@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中道改革連合の政策スキーム図解 | 公明党動画要約</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap');
+
+  :root {
+    --primary: #005eb0; /* Komeito Blue */
+    --primary-blue: #004098; /* 立憲的ブルー */
+    --primary-orange: #F39800; /* 公明的オレンジ */
+    --mix-color: #008080; /* 連合イメージのティール */
+    --accent-green: #28a745; /* お金・成長 */
+    --bg-color: #f3f4f6;
+    --card-bg: #ffffff;
+    --text-color: #333333;
+  }
+
+  body {
+    font-family: 'Noto Sans JP', "Hiragino Kaku Gothic ProN", sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+  }
+
+  /* 戻るボタン */
+  .back-link {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  .back-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  }
+
+  .page-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    padding: 30px;
+    overflow: hidden;
+  }
+
+  h1 {
+    text-align: center;
+    color: var(--primary-blue);
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    border-bottom: 3px solid var(--primary-orange);
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+  
+  .header-container {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  /* セクション共通 */
+  .section-box {
+    border: 2px solid #e0e0e0;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 25px;
+    position: relative;
+    background: #fff;
+    transition: transform 0.3s ease;
+  }
+  
+  .section-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  }
+
+  .section-title {
+    background: var(--mix-color);
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    display: inline-block;
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    font-size: 0.9rem;
+  }
+
+  /* 1. 連合の形成 */
+  .alliance-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 10px;
+  }
+  
+  .party {
+    width: 45%;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .party-rikken { background: var(--primary-blue); }
+  .party-komei { background: var(--primary-orange); }
+  
+  .plus-icon {
+    font-size: 2rem;
+    color: #888;
+    font-weight: bold;
+  }
+
+  /* 矢印 */
+  .arrow-down {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--mix-color);
+    margin: -15px 0 10px 0;
+  }
+
+  /* 2. エンジン（ジャパン・ファンド） */
+  .engine-diagram {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .engine-step {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #e8f5e9;
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 1px solid var(--accent-green);
+    box-sizing: border-box;
+  }
+
+  .engine-icon {
+    font-size: 1.5rem;
+    background: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+
+  .engine-text {
+    flex: 1;
+    text-align: center;
+    font-weight: bold;
+    color: #2e7d32;
+  }
+
+  /* 3. 成果（政策） */
+  .policies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+  }
+
+  .policy-card {
+    background: #fdfdfd;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+  }
+
+  .policy-icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .policy-name {
+    font-weight: bold;
+    color: var(--mix-color);
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .policy-desc {
+    font-size: 0.85rem;
+    color: #666;
+  }
+
+  /* メリット */
+  .highlight {
+    color: #d32f2f;
+    font-weight: bold;
+    background: #ffebee;
+    padding: 2px 5px;
+    border-radius: 4px;
+  }
+
+  /* フッター */
+  footer {
+    text-align: center;
+    margin-top: 30px;
+    color: #888;
+    font-size: 0.8rem;
+    padding-bottom: 20px;
+  }
+  footer p {
+    margin: 5px 0;
+  }
+
+  /* レスポンシブ対応 */
+  @media (max-width: 600px) {
+    .party { font-size: 0.9rem; padding: 10px; }
+    .policies-grid { grid-template-columns: 1fr; }
+    .container { padding: 15px; }
+    h1 { font-size: 1.4rem; }
+    .alliance-box { flex-direction: column; gap: 10px; }
+    .party { width: 100%; }
+    .plus-icon { transform: rotate(90deg); }
+  }
+
+  /* 印刷スタイル */
+  @media print {
+    body {
+      background: white;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .back-link {
+      display: none;
+    }
+    .page-wrapper {
+      max-width: 100%;
+    }
+    .container {
+      box-shadow: none;
+      border: 1px solid #ddd;
+    }
+  }
+
+</style>
+</head>
+<body>
+
+<div class="page-wrapper">
+  <a href="index.html" class="back-link">← 一覧に戻る</a>
+
+<div class="container">
+  <div class="header-container">
+    <h1>中道改革連合の仕組み</h1>
+    <p>5日間で合意！現実的な生活支援策の構造</p>
+  </div>
+
+  <!-- ステップ1: 協力体制 -->
+  <div class="section-box">
+    <div class="section-title">STEP 1 : 最強タッグ結成</div>
+    <div class="alliance-box">
+      <div class="party party-rikken">
+        <div>立憲民主党</div>
+        <div style="font-size:0.8em; font-weight:normal;">リベラル・支援</div>
+      </div>
+      <div class="plus-icon">+</div>
+      <div class="party party-komei">
+        <div>公明党</div>
+        <div style="font-size:0.8em; font-weight:normal;">福祉・平和</div>
+      </div>
+    </div>
+    <p style="text-align:center; margin-top:15px; font-size:0.9em;">
+      価値観の8割が一致。<br>
+      「反対」ではなく<strong>「合意形成と実行」</strong>を目指す。
+    </p>
+  </div>
+
+  <div class="arrow-down">▼</div>
+
+  <!-- ステップ2: 財源確保 -->
+  <div class="section-box" style="border-color: var(--accent-green);">
+    <div class="section-title" style="background: var(--accent-green);">STEP 2 : 財源のエンジン「ジャパン・ファンド」</div>
+    <div style="text-align:center; margin-bottom:15px; font-weight:bold; color:#2e7d32;">
+      増税でも借金でもない「第3の道」
+    </div>
+    <div class="engine-diagram">
+      <div class="engine-step">
+        <div class="engine-icon">🏛️</div>
+        <div class="engine-text">政府の持つ資産・外貨準備金</div>
+      </div>
+      <div style="color:var(--accent-green); font-size:1.2rem;">⬇ 統合・プロが運用</div>
+      <div class="engine-step">
+        <div class="engine-icon">📈</div>
+        <div class="engine-text">市場で運用して利益を生む</div>
+      </div>
+      <div style="color:var(--accent-green); font-size:1.2rem;">⬇ 利益を政策へ</div>
+      <div class="engine-step">
+        <div class="engine-icon">💰</div>
+        <div class="engine-text">新しい財源の誕生！</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow-down">▼</div>
+
+  <!-- ステップ3: 政策の実行 -->
+  <div class="section-box">
+    <div class="section-title">STEP 3 : 私たちの生活はどう変わる？</div>
+    <div class="policies-grid">
+      <!-- 政策1 -->
+      <div class="policy-card">
+        <span class="policy-icon">🛒</span>
+        <span class="policy-name">食料品の消費税 0%</span>
+        <span class="policy-desc">
+          ジャパン・ファンドの利益を使って、<br>
+          <span class="highlight">ずっと0%</span>にします。<br>
+          毎日の買い物が安くなる！
+        </span>
+      </div>
+      <!-- 政策2 -->
+      <div class="policy-card">
+        <span class="policy-icon">🚧</span>
+        <span class="policy-name">年収の壁を突破</span>
+        <span class="policy-desc">
+          130万円を超えても損しないように<br>
+          <span class="highlight">給付金で穴埋め</span>。<br>
+          もっと自由に働ける！
+        </span>
+      </div>
+      <!-- 政策3 -->
+      <div class="policy-card">
+        <span class="policy-icon">🎓</span>
+        <span class="policy-name">未来への投資</span>
+        <span class="policy-desc">
+          教育・子育て・科学技術へ。<br>
+          若者世代を支える<br>
+          <span class="highlight">社会の再設計</span>。
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center; font-size:0.8em; color:#888; margin-top:20px;">
+    ※この図は動画内容に基づいた概念図です。
+  </div>
+
+</div>
+
+  <footer>
+    <p>Created by 公明党支持者有志</p>
+    <a href="index.html" class="back-link" style="margin-top: 15px;">← 一覧に戻る</a>
+  </footer>
+</div>
+
+</body>
+</html>
