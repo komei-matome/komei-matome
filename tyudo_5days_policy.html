@@ -220,6 +220,24 @@
     border-radius: 4px;
   }
 
+  /* 動画リンク */
+  .video-link {
+    display: block;
+    background: #c4302b;
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 25px;
+    border-radius: 50px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    transition: transform 0.2s;
+  }
+  .video-link:hover {
+    transform: scale(1.02);
+  }
+
   /* フッター */
   footer {
     text-align: center;
@@ -250,7 +268,7 @@
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
     }
-    .back-link {
+    .back-link, .video-link {
       display: none;
     }
     .page-wrapper {
@@ -363,6 +381,10 @@
   <div style="text-align:center; font-size:0.8em; color:#888; margin-top:20px;">
     ※この図は動画内容に基づいた概念図です。
   </div>
+
+  <a href="https://youtu.be/KiXarv6eT3k?si=g24XynFdqGdattkB" target="_blank" class="video-link">
+    ▶ YouTubeで動画を見る
+  </a>
 
 </div>
 
