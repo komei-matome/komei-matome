@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中道改革連合 いさ進一 コメント100本ノック全集</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;900&display=swap');
+
+  :root {
+    --brand-blue: #0067C0;
+    --brand-orange: #F29600;
+    --bg-color: #f0f8ff;
+    --text-color: #333;
+    --chat-isa-bg: #e1f5fe;
+    --chat-isa-border: #81d4fa;
+    --chat-user-bg: #fff;
+    --category-bg: #eceff1;
+  }
+
+  body {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+    min-height: 100vh;
+  }
+
+  /* ヘッダー */
+  header {
+    text-align: center;
+    padding: 30px 20px;
+    background: linear-gradient(135deg, #e0f7fa 0%, #fff 100%);
+    border-bottom: 5px solid var(--brand-blue);
+  }
+
+  h1 {
+    color: var(--brand-blue);
+    font-size: 1.8rem;
+    margin: 0 0 10px 0;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    color: var(--brand-orange);
+    font-weight: bold;
+    display: inline-block;
+    background: #fff3e0;
+    padding: 5px 15px;
+    border-radius: 20px;
+  }
+
+  .isa-icon {
+    width: 60px;
+    height: 60px;
+    background: #0067C0;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 0 auto 10px;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+
+  /* Q&Aエリア */
+  .qa-container {
+    padding: 20px;
+  }
+
+  .category-title {
+    background: var(--brand-blue);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin: 40px 0 20px 0;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .category-title:first-of-type {
+    margin-top: 10px;
+  }
+
+  .chat-row {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+    margin-bottom: 25px;
+  }
+
+  .chat-row.isa {
+    flex-direction: row-reverse;
+  }
+
+  .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  .av-user { background: #eee; color: #555; font-size: 0.9rem; }
+  .av-isa { 
+    background: var(--brand-blue); 
+    color: white;
+    border: 2px solid var(--brand-orange);
+    font-size: 0.9rem;
+  }
+
+  .bubble {
+    padding: 15px;
+    border-radius: 15px;
+    max-width: 85%;
+    font-size: 0.95rem;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  }
+
+  .b-user {
+    background: var(--chat-user-bg);
+    border: 1px solid #ddd;
+    border-top-left-radius: 0;
+  }
+
+  .b-isa {
+    background: var(--chat-isa-bg);
+    border: 1px solid var(--chat-isa-border);
+    color: #01579b;
+    border-top-right-radius: 0;
+  }
+
+  .user-name {
+    font-size: 0.7rem;
+    color: #999;
+    display: block;
+    margin-bottom: 4px;
+    font-weight: bold;
+  }
+
+  /* フッター */
+  .footer {
+    text-align: center;
+    padding: 30px;
+    color: #888;
+    font-size: 0.8rem;
+    background: #f9f9f9;
+    border-top: 1px solid #eee;
+  }
+
+  .btn-link {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 25px;
+    background: #cc0000;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  .btn-link:hover { opacity: 0.8; }
+
+  .back-link {
+    display: inline-block;
+    background: var(--brand-blue);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  .back-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    opacity: 0.9;
+  }
+
+  /* レスポンシブ対応 */
+  @media (max-width: 600px) {
+    .container {
+      padding: 0;
+    }
+    header {
+      padding: 20px 15px;
+    }
+    h1 {
+      font-size: 1.5rem;
+    }
+    .qa-container {
+      padding: 15px;
+    }
+    .bubble {
+      max-width: 90%;
+      font-size: 0.9rem;
+      padding: 12px;
+    }
+    .category-title {
+      font-size: 1rem;
+      padding: 6px 12px;
+    }
+  }
+
+  /* 印刷スタイル */
+  @media print {
+    body {
+      background: white;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .back-link, .btn-link {
+      display: none;
+    }
+    .container {
+      max-width: 100%;
+      box-shadow: none;
+    }
+    header {
+      border-bottom: 2px solid var(--brand-blue);
+    }
+    .chat-row {
+      break-inside: avoid;
+      margin-bottom: 15px;
+    }
+    .category-title {
+      break-after: avoid;
+    }
+  }
+
+</style>
+</head>
+<body>
+
+  <div class="container">
+
+  <header>
+    <div class="isa-icon">いさ</div>
+    <h1>コメント100本ノック全集</h1>
+    <div class="subtitle">忖度なし！全部答えます</div>
+  </header>
+
+  <!-- 戻るリンク -->
+  <div style="padding: 20px 20px 0;">
+    <a href="index.html" class="back-link">← 記事一覧に戻る</a>
+  </div>
+
+  <div class="qa-container">
+
+    <!-- カテゴリ1: 経済・財源・税金 -->
+    <div class="category-title">💰 経済・財源・税金</div>
+
+    <div class="chat-row">
+      <div class="avatar av-user">Q</div>
+      <div class="bubble b-user">
+        <span class="user-name">ジャリンコB6Fさん</span>
+        消費税減税で円安になりませんか？
+      </div>
+    </div>
+    <div class="chat-row isa">
+      <div class="avatar av-isa">伊</div>
+      <div class="bubble b-isa">
+        財源を示さず減税すると「日本の借金が増える」と思われて円が売られ（円安になり）ますが、私たちは「ジャパン・ファンド」という確かな財源セットで示すので、円の信用は落ちません。
+      </div>
+    </div>
+
+    <div class="chat-row">
+      <div class="avatar av-user">Q</div>
+      <div class="bubble b-user">
+        <span class="user-name">エビカニさん</span>
+        財源がないと国債が売られますよね。
+      </div>
+    </div>
+    <div class="chat-row isa">
+      <div class="avatar av-isa">伊</div>
+      <div class="bubble b-isa">
+        その通りです。だからこそ「財源はどうするのか」を明確に言うことが一番大事なんです。
+      </div>
+    </div>
+
+    <div class="chat-row">
+      <div class="avatar av-user">Q</div>
+      <div class="bubble b-user">
+        <span class="user-name">大キングK6Yさん</span>
+        1人当たりGDPを上げる＝所得を上げること？
+      </div>
+    </div>
+    <div class="chat-row isa">
+      <div class="avatar av-isa">伊</div>
+      <div class="bubble b-isa">
+        「手取り」を増やすことも大事ですが、税や保険料を引く前の「額面（総額）」自体を増やさないと国力は上がりません。これが1人当たりGDPを増やすという意味です。
+      </div>
+    </div>
+
+    <div class="chat-row">
+      <div class="avatar av-user">Q</div>
+      <div class="bubble b-user">
+        <span class="user-name">ラテスさん</span>
+        給付付き税額控除について教えて。
+      </div>
+    </div>
+    <div class="chat-row isa">
+      <div class="avatar av-isa">伊</div>
+      <div class="bubble b-isa">
+        税金が少ない低所得の方は減税の恩恵が小さいので、引ききれない分を「給付金」として渡す仕組みです。実は解散前に自民・立憲ともう少しで合意できていた政策なんです。
+      </div>
+    </div>
+
+    <!-- カテゴリ2: 社会保障・働き方 -->
+    <div class="category-title">🏥 社会保障・働き方</div>
+
+    <div class="chat-row">
+      <div class="avatar av-user">Q</div>
+      <div class="bubble b-user">
+        <span class="user-name">Petrinska1213さん</span>
+        130万円の壁の解消は具体的にどうやるの？
+      </div>
+    </div>
+    <div class="chat-row isa">
+      <div class="avatar av-isa">伊</div>
+      <div class="bubble b-isa">
+        103万（税金）は実は壁ではありません。本当の壁は社会保険料が発生して手取りが減る130万です。ここを公的資金（給付）で埋めて、働き損が出ないようにします。
+      </div>
+    </div>
+
+    <div class="chat-row">
+      <div class="avatar av-user">Q</div>
+      <div class="bubble b-user">
+        <span class="user-name">えの子さん</span>
+        年金運用はうまくいってるのに年金額が減る？将来もらえないの？
+      </div>
+    </div>
+    <div class="chat-row isa">
+      <div class="avatar av-isa">伊</div>
+      <div class="bubble b-isa">
+        年金がもらえない世代はありません。「生涯賃金の半分は保障する」という設計です。運用益はすごいですが、それは全体の財源の1割。残り9割は現役世代の保険料で回っています。運用益の一部を現役世代支援に回すのがジャパンファンドの考え方です。
+      </div>
+    </div>
+
+    <div class="chat-row">
+      <div class="avatar av-user">Q</div>
+      <div class="bubble b-user">
+        <span class="user-name">視聴者</span>
+        ベーシックサービスって何？
+      </div>
+    </div>
+    <div class="chat-row isa">
+      <div class="avatar av-isa">伊</div>
+      <div class="bubble b-isa">
+        医療・介護・教育など、生きるために不可欠なサービスは国が責任を持って（無償または安価で）提供することです。貯金を切り崩す不安がなくなれば、経済も回ります。
+      </div>
+    </div>
+
+    <div class="chat-row">
+      <div class="avatar av-user">Q</div>
+      <div class="bubble b-user">
+        <span class="user-name">質相もないさん</span>
+        定年廃止といっても、中高年は職種が限定されがちでは？
+      </div>
+    </div>
+    <div class="chat-row isa">
+      <div class="avatar av-isa">伊</div>
+      <div class="bubble b-isa">
+        ごもっともです。だからこそ「メンバーシップ型（会社に就職）」から「ジョブ型（仕事に就職）」への転換が必要です。仕事の成果で評価されれば、年齢は関係なくなります。
+      </div>
+    </div>
+
+    <div class="chat-row">
+      <div class="avatar av-user">Q</div>
+      <div class="bubble b-user">
+        <span class="user-name">おはぎさん</span>
+        OTC類似薬（市販薬と同じ薬）の保険外しはどうなる？
+      </div>
+    </div>
+    <div class="chat-row isa">
+      <div class="avatar av-isa">伊</div>
+      <div class="bubble b-isa">
+        維新はこれを進めて患者負担を増やそうとしていますが、私たちは反対です。必要な医療へのアクセスを守ります。
+      </div>
+    </div>
+
+    <div class="chat-row">
+      <div class="avatar av-user">Q</div>
+      <div class="bubble b-user">
+        <span class="user-name">FUMさん</span>
+        訪問介護事業者が倒産・撤退しています。
+      </div>
+    </div>
+    <div class="chat-row isa">
+      <div class="avatar av-isa">伊</div>
+      <div class="bubble b-isa">
+        報酬改定のデータ算出に問題があり、実態より利益が出ていると判断されて報酬が抑えられてしまいました。訪問介護は在宅医療の要なので、しっかり手を入れたいです。
+      </div>
+    </div>
+
+    <div class="chat-row">
+      <div class="avatar av-user">Q</div>
+      <div class="bubble b-user">
+        <span class="user-name">はるちーさん</span>
+        遠距離介護の支援をお願いしたい。
+      </div>
+    </div>
+    <div class="chat-row isa">
+      <div class="avatar av-isa">伊</div>
+      <div class="bubble b-isa">
+        切実な問題ですね。2拠点生活の推進などと絡めて、しっかり持ち帰って検討します。
+      </div>
+    </div>
+
+    <!-- カテゴリ3: 外交・安保・外国人 -->
+    <div class="category-title">🌏 外交・安保・外国人</div>
+
+    <div class="chat-row">
+      <div class="avatar av-user">Q</div>
+      <div class="bubble b-user">
+        <span class="user-name">タゲおじさんさん</span>
+        トランプ大統領などへの対応は？
+      </div>
+    </div>
+    <div class="chat-row isa">
+      <div class="avatar av-isa">伊</div>
+      <div class="bubble b-isa">
+        日米同盟は基軸ですが、アメリカ依存一辺倒はリスクがあります。TPPのような多国間協調を日本がリードして、リスクを分散するのが中道の外交です。
+      </div>
+    </div>
+
+    <div class="chat-row">
+      <div class="avatar av-user">Q</div>
+      <div class="bubble b-user">
+        <span class="user-name">MCZKさん</span>
+        中国との関係は？昔の親しげな動画が出回っていますが…
+      </div>
+    </div>
+    <div class="chat-row isa">
+      <div class="avatar av-isa">伊</div>
+      <div class="bubble b-isa">
+        あれは数年前の国慶節（建国記念日）の挨拶動画です。結婚式で悪口を言わないのと同じで、外交儀礼です。今の中国の行動に対しては、テレビ等で厳しく批判しています。
+      </div>
+    </div>
+
+    <div class="chat-row">
+      <div class="avatar av-user">Q</div>
+      <div class="bubble b-user">
+        <span class="user-name">川西カラカラさん</span>
+        移民問題はどう考えますか？
+      </div>
+    </div>
+    <div class="chat-row isa">
+      <div class="avatar av-isa">伊</div>
+      <div class="bubble b-isa">
+        ルールを守らない外国人は厳しく対処します。ただ、経済や介護現場は彼らなしでは回りません。「来ていただくなら、教育や医療などの受け入れ体制も整える」のが責任ある政治です。
+      </div>
+    </div>
+
+    <div class="chat-row">
+      <div class="avatar av-user">Q</div>
+      <div class="bubble b-user">
+        <span class="user-name">ひ室徹也さん</span>
+        外国人の医療費不払いが心配です。
+      </div>
+    </div>
+    <div class="chat-row isa">
+      <div class="avatar av-isa">伊</div>
+      <div class="bubble b-isa">
+        不払いがあれば入国拒否リストに入れるなど厳しくします。ただデータを見ると、若い外国人が保険料を払って支えてくれている側面の方が大きいのが現実です。
+      </div>
+    </div>
+
+    <!-- カテゴリ4: 多様性・若者 -->
+    <div class="category-title">🌈 多様性・若者・教育</div>
+
+    <div class="chat-row">
+      <div class="avatar av-user">Q</div>
+      <div class="bubble b-user">
+        <span class="user-name">ララっこさん</span>
+        若い世代への政策は？
+      </div>
+    </div>
+    <div class="chat-row isa">
+      <div class="avatar av-isa">伊</div>
+      <div class="bubble b-isa">
+        単身者への家賃補助（住宅手当）、130万の壁対策、奨学金返済支援、NISA減税など、徹底して現役世代を支えます。
+      </div>
+    </div>
+
+    <div class="chat-row">
+      <div class="avatar av-user">Q</div>
+      <div class="bubble b-user">
+        <span class="user-name">ネットの声</span>
+        こども家庭庁を解体してください。
+      </div>
+    </div>
+    <div class="chat-row isa">
+      <div class="avatar av-isa">伊</div>
+      <div class="bubble b-isa">
+        解体してもお金は浮きません。予算7兆円のほとんどは、児童手当や保育園への補助金としてすでに皆さんに配られているお金だからです。
+      </div>
+    </div>
+
+    <div class="chat-row">
+      <div class="avatar av-user">Q</div>
+      <div class="bubble b-user">
+        <span class="user-name">ときさん</span>
+        同性婚の法制化は公約に入っていますか？
+      </div>
+    </div>
+    <div class="chat-row isa">
+      <div class="avatar av-isa">伊</div>
+      <div class="bubble b-isa">
+        やるつもりです。ジェンダー平等やマイノリティ支援の項目に含まれています。
+      </div>
+    </div>
+
+    <!-- カテゴリ5: 政治・選挙・党運営 -->
+    <div class="category-title">🗳️ 政治・選挙・党運営</div>
+
+    <div class="chat-row">
+      <div class="avatar av-user">Q</div>
+      <div class="bubble b-user">
+        <span class="user-name">質問コえさん</span>
+        不祥事を起こしたら議員辞職しますか？
+      </div>
+    </div>
+    <div class="chat-row isa">
+      <div class="avatar av-isa">伊</div>
+      <div class="bubble b-isa">
+        クリーンなイメージは中道の命です。厳しい姿勢で臨みます。
+      </div>
+    </div>
+
+    <div class="chat-row">
+      <div class="avatar av-user">Q</div>
+      <div class="bubble b-user">
+        <span class="user-name">質問ですさん</span>
+        維新以外の政党は大阪で活動制限されるって本当？
+      </div>
+    </div>
+    <div class="chat-row isa">
+      <div class="avatar av-isa">伊</div>
+      <div class="bubble b-isa">
+        理不尽ですよね。吉村知事も昔は同じことを批判していたのに、自分たちが権力を持ったら同じことをやっている。腹立たしいです。
+      </div>
+    </div>
+
+    <div class="chat-row">
+      <div class="avatar av-user">Q</div>
+      <div class="bubble b-user">
+        <span class="user-name">HKさん</span>
+        中道単独の党員募集や、公明新聞への掲載は？
+      </div>
+    </div>
+    <div class="chat-row isa">
+      <div class="avatar av-isa">伊</div>
+      <div class="bubble b-isa">
+        党員募集は選挙後になるでしょう。公明新聞に中道の記事は載らないと思います。別の党ですからね。
+      </div>
+    </div>
+
+    <div class="chat-row">
+      <div class="avatar av-user">Q</div>
+      <div class="bubble b-user">
+        <span class="user-name">こねこさん</span>
+        参議院も合流しますか？
+      </div>
+    </div>
+    <div class="chat-row isa">
+      <div class="avatar av-isa">伊</div>
+      <div class="bubble b-isa">
+        いずれ合流する方針です。地方議員もです。
+      </div>
+    </div>
+
+    <div class="chat-row">
+      <div class="avatar av-user">Q</div>
+      <div class="bubble b-user">
+        <span class="user-name">ラーやさん</span>
+        旧立憲の人と仲良くやれてますか？
+      </div>
+    </div>
+    <div class="chat-row isa">
+      <div class="avatar av-isa">伊</div>
+      <div class="bubble b-isa">
+        めちゃくちゃ話が合う人が多いです。立場の違いで言い合っていただけで、個人としてはリスペクトし合える関係です。
+      </div>
+    </div>
+
+    <div class="chat-row">
+      <div class="avatar av-user">Q</div>
+      <div class="bubble b-user">
+        <span class="user-name">タボンボンさん</span>
+        米山さんは要らない。
+      </div>
+    </div>
+    <div class="chat-row isa">
+      <div class="avatar av-isa">伊</div>
+      <div class="bubble b-isa">
+        度量の広い党でありたいです。もし党の方針と違うことを言えば、有権者の皆さんが判断されることだと思います。
+      </div>
+    </div>
+
+    <div class="chat-row">
+      <div class="avatar av-user">Q</div>
+      <div class="bubble b-user">
+        <span class="user-name">グにぐに890さん</span>
+        SNSのデマや対立煽りの規制はできませんか？
+      </div>
+    </div>
+    <div class="chat-row isa">
+      <div class="avatar av-isa">伊</div>
+      <div class="bubble b-isa">
+        表現の自由があるので難しいですが、海外勢力による工作なら規制すべきです。あとはAIによるファクトチェックや、皆さんのリテラシー向上に期待しています。
+      </div>
+    </div>
+
+    <div class="chat-row">
+      <div class="avatar av-user">Q</div>
+      <div class="bubble b-user">
+        <span class="user-name">ラブ七さん</span>
+        投票用紙に「公明」「立憲」と書いたら無効票？
+      </div>
+    </div>
+    <div class="chat-row isa">
+      <div class="avatar av-isa">伊</div>
+      <div class="bubble b-isa">
+        地域や選管の判断による可能性があります。無効になるリスクもあるので注意が必要です。
+      </div>
+    </div>
+
+    <!-- カテゴリ6: いさ進一 個人・雑談 -->
+    <div class="category-title">🎙️ いさ進一 個人・雑談</div>
+
+    <div class="chat-row">
+      <div class="avatar av-user">Q</div>
+      <div class="bubble b-user">
+        <span class="user-name">ピカ太郎さん</span>
+        ミラーボールを産んだホリエモンに一言。
+      </div>
+    </div>
+    <div class="chat-row isa">
+      <div class="avatar av-isa">伊</div>
+      <div class="bubble b-isa">
+        ありがとうございました！あの一言で自分の殻が破れました。
+      </div>
+    </div>
+
+    <div class="chat-row">
+      <div class="avatar av-user">Q</div>
+      <div class="bubble b-user">
+        <span class="user-name">HKさん</span>
+        斎藤代表に「斎藤さんだぞ」やってほしい！
+      </div>
+    </div>
+    <div class="chat-row isa">
+      <div class="avatar av-isa">伊</div>
+      <div class="bubble b-isa">
+        やってほしいですよね！キラキラジャケット送りつけて着てもらおうかな（笑）。
+      </div>
+    </div>
+
+    <div class="chat-row">
+      <div class="avatar av-user">Q</div>
+      <div class="bubble b-user">
+        <span class="user-name">K2620さん</span>
+        ピアノ演奏はまだですか？
+      </div>
+    </div>
+    <div class="chat-row isa">
+      <div class="avatar av-isa">伊</div>
+      <div class="bubble b-isa">
+        3月初旬にサントリーホールで発表会があるんですが…選挙で全然練習できてなくてヤバいです。
+      </div>
+    </div>
+
+    <div class="chat-row">
+      <div class="avatar av-user">Q</div>
+      <div class="bubble b-user">
+        <span class="user-name">ホワイトシュガーさん</span>
+        健康法は？
+      </div>
+    </div>
+    <div class="chat-row isa">
+      <div class="avatar av-isa">伊</div>
+      <div class="bubble b-isa">
+        ストレス発散です。お酒飲む、料理作る、そして走る（20kmくらい）！
+      </div>
+    </div>
+
+    <div class="chat-row">
+      <div class="avatar av-user">Q</div>
+      <div class="bubble b-user">
+        <span class="user-name">ラテスさん</span>
+        どんな料理作りますか？
+      </div>
+    </div>
+    <div class="chat-row isa">
+      <div class="avatar av-isa">伊</div>
+      <div class="bubble b-isa">
+        家にいる時間が短いので、豚丼とかパパっと作れるものが多いですね。
+      </div>
+    </div>
+
+    <div class="chat-row">
+      <div class="avatar av-user">Q</div>
+      <div class="bubble b-user">
+        <span class="user-name">南さん</span>
+        ちゃんと寝てますか？
+      </div>
+    </div>
+    <div class="chat-row isa">
+      <div class="avatar av-isa">伊</div>
+      <div class="bubble b-isa">
+        原稿作りで夜中になることが多いです。なんとか睡眠確保します。
+      </div>
+    </div>
+
+    <div class="chat-row">
+      <div class="avatar av-user">Q</div>
+      <div class="bubble b-user">
+        <span class="user-name">おんちゃんさん</span>
+        中道グッズ欲しいです。
+      </div>
+    </div>
+    <div class="chat-row isa">
+      <div class="avatar av-isa">伊</div>
+      <div class="bubble b-isa">
+        ラブ＆ピースグッズや中道グッズ、色々考えたいですね。
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <p>出典：2026/01/25 いさ進一チャンネル 15万人突破記念ライブ<br>「コメント100本ノック」より抜粋・編集</p>
+    <a href="https://www.youtube.com/live/iaIs0Xuy7lw" target="_blank" class="btn-link">▶ 動画で全編を見る</a>
+    <div style="margin-top: 15px;">
+      <a href="index.html" class="back-link">← 記事一覧に戻る</a>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
