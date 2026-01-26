@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>いさ進一のファクトチェック！3つの噂を解明</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;800&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary-blue: #0056b3;
+    --accent-orange: #ff9f1c;
+    --bg-color: #f0f4f8;
+    --card-bg: #ffffff;
+    --rumor-bg: #f8d7da;
+    --rumor-text: #721c24;
+    --truth-bg: #d4edda;
+    --truth-text: #155724;
+  }
+
+  body {
+    font-family: 'M PLUS Rounded 1c', 'Noto Sans JP', sans-serif;
+    background-color: var(--bg-color);
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+  }
+
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  /* ヘッダー */
+  header {
+    text-align: center;
+    padding: 30px 0;
+    background: linear-gradient(135deg, var(--primary-blue), #00a8cc);
+    color: white;
+    border-radius: 0 0 25px 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  header::before {
+    content: '';
+    position: absolute;
+    top: -20px; right: -20px;
+    width: 100px; height: 100px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    margin: 0;
+    font-weight: 800;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+    margin-top: 10px;
+    background: rgba(255,255,255,0.2);
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 20px;
+  }
+
+  .isa-badge {
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent-orange);
+    color: white;
+    padding: 5px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+
+  /* カードデザイン */
+  .card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    margin-bottom: 25px;
+    transition: transform 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+  }
+
+  .card-header {
+    padding: 15px 20px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+  }
+
+  .theme-1 { background: #5c6bc0; }
+  .theme-2 { background: #26a69a; }
+  .theme-3 { background: #ef5350; }
+
+  .content-box {
+    padding: 20px;
+  }
+
+  /* 噂（Rumor）セクション */
+  .rumor-box {
+    background: #fff5f5;
+    border-left: 5px solid #ff5252;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 0 10px 10px 0;
+    position: relative;
+  }
+
+  .rumor-label {
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    background: #ff5252;
+    color: white;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+
+  .rumor-text {
+    font-weight: bold;
+    color: #c62828;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  /* 真実（Fact）セクション */
+  .fact-box {
+    background: #e8f5e9;
+    border-left: 5px solid #66bb6a;
+    padding: 15px;
+    border-radius: 0 10px 10px 0;
+    position: relative;
+  }
+
+  .fact-label {
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    background: #66bb6a;
+    color: white;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+
+  .fact-text {
+    color: #2e7d32;
+    font-size: 0.95rem;
+  }
+
+  .highlight {
+    background: linear-gradient(transparent 70%, #fff176 70%);
+    font-weight: bold;
+  }
+
+  /* フッター */
+  .footer {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 40px;
+    padding-bottom: 20px;
+  }
+
+  .source-link {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  /* 戻るリンク */
+  .back-link {
+    display: inline-block;
+    background: var(--primary-blue);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+  }
+  .back-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    opacity: 0.9;
+  }
+
+  /* 動画リンクボタン */
+  .video-link {
+    display: block;
+    background: #c4302b;
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 30px;
+    border-radius: 50px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    transition: transform 0.2s;
+  }
+  .video-link:hover {
+    transform: scale(1.02);
+  }
+
+  /* レスポンシブ調整 */
+  @media (max-width: 480px) {
+    h1 { font-size: 1.5rem; }
+    .card-header { font-size: 1rem; }
+    .container { padding: 15px; }
+  }
+
+  /* 印刷スタイル */
+  @media print {
+    body {
+      background: white;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .back-link, .video-link {
+      display: none;
+    }
+    .container {
+      max-width: 100%;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- 戻るリンク -->
+    <a href="index.html" class="back-link">← 記事一覧に戻る</a>
+
+    <header>
+      <h1>ネットの噂、<br>直接答えます！</h1>
+      <div class="subtitle">2026.01.26 モーニングライブより</div>
+      <div class="isa-badge">いさ進一 ファクトチェック</div>
+    </header>
+
+    <!-- Theme 1: 土地規制 -->
+    <div class="card">
+      <div class="card-header theme-1">
+        <i class="fas fa-map-marked-alt"></i> 土地規制（重要土地調査法）
+      </div>
+      <div class="content-box">
+        <div class="rumor-box">
+          <div class="rumor-label">ネットの噂</div>
+          <div class="rumor-text">
+            <i class="fas fa-comment-dots"></i>
+            「中国に日本の土地を買わせるために、規制エリアを1kmに狭めたんでしょ？」
+          </div>
+        </div>
+        <div class="arrow-down" style="text-align:center; color:#ccc; margin-bottom:10px;">
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="fact-box">
+          <div class="fact-label">真実（Fact）</div>
+          <div class="fact-text">
+            <strong>違います。市民生活を守るためです。</strong><br>
+            もし自民党案の「20km」を採用すると、防衛省（市ヶ谷）周辺の東京の住宅街の大部分が規制対象になります。<br><br>
+            家を売るたびに国へ届出が必要になり、<span class="highlight">一般市民の自由が大きく制限される</span>ため、現実的な「1km」に着地させました。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Theme 2: ジャパン・ファンド -->
+    <div class="card">
+      <div class="card-header theme-2">
+        <i class="fas fa-chart-line"></i> ジャパン・ファンド
+      </div>
+      <div class="content-box">
+        <div class="rumor-box">
+          <div class="rumor-label">ネットの噂</div>
+          <div class="rumor-text">
+            <i class="fas fa-dice"></i>
+            「国民の年金を使って、株のギャンブルをする気か？」
+          </div>
+        </div>
+        <div class="arrow-down" style="text-align:center; color:#ccc; margin-bottom:10px;">
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="fact-box">
+          <div class="fact-label">真実（Fact）</div>
+          <div class="fact-text">
+            <strong>ギャンブル（投機）ではなく、長期投資です。</strong><br>
+            デイトレーダーのように売り買いを繰り返すのではなく、優良な株や債券を持ち続けて<span class="highlight">「毎年の配当金」</span>を得る仕組みです。<br><br>
+            年金機構（GPIF）はこの方法ですでに<strong>150兆円の利益</strong>を出しており、その成功モデルを活用します。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Theme 3: 独身税 -->
+    <div class="card">
+      <div class="card-header theme-3">
+        <i class="fas fa-users"></i> 子育て支援金（いわゆる独身税）
+      </div>
+      <div class="content-box">
+        <div class="rumor-box">
+          <div class="rumor-label">ネットの噂</div>
+          <div class="rumor-text">
+            <i class="fas fa-user-slash"></i>
+            「独身の人への罰金（独身税）を作るの？」
+          </div>
+        </div>
+        <div class="arrow-down" style="text-align:center; color:#ccc; margin-bottom:10px;">
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="fact-box">
+          <div class="fact-label">真実（Fact）</div>
+          <div class="fact-text">
+            <strong>罰ではありません。社会全体での支え合いです。</strong><br>
+            「子育て支援金」のことです。少子化対策を親御さんだけに押し付けるのではなく、高齢者も企業も若者も、<span class="highlight">「社会全体で薄く広く負担して支える」</span>ための制度です。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href="https://www.youtube.com/watch?v=cLRr5V-6qik" target="_blank" class="video-link">
+      ▶ YouTubeで動画を見る
+    </a>
+
+    <div class="footer">
+      <p>出典：<a href="https://www.youtube.com/watch?v=cLRr5V-6qik" class="source-link" target="_blank">いさ進一チャンネル モーニングライブ (2026/1/26)</a></p>
+      <p>※この図解は動画内容に基づき作成されたものです。</p>
+      <div style="margin-top: 15px;">
+        <a href="index.html" class="back-link">← 記事一覧に戻る</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

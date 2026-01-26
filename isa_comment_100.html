@@ -34,6 +34,8 @@
     background-color: #fff;
     box-shadow: 0 0 20px rgba(0,0,0,0.05);
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
   }
 
   /* ヘッダー */
@@ -79,6 +81,7 @@
   /* Q&Aエリア */
   .qa-container {
     padding: 20px;
+    flex: 1;
   }
 
   .category-title {
@@ -103,6 +106,12 @@
     gap: 15px;
     align-items: flex-start;
     margin-bottom: 25px;
+    animation: fadeIn 0.3s ease-in;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
   .chat-row.isa {
@@ -167,6 +176,7 @@
     font-size: 0.8rem;
     background: #f9f9f9;
     border-top: 1px solid #eee;
+    margin-top: auto;
   }
 
   .btn-link {
@@ -203,6 +213,7 @@
   @media (max-width: 600px) {
     .container {
       padding: 0;
+      min-height: auto;
     }
     header {
       padding: 20px 15px;
@@ -221,6 +232,21 @@
     .category-title {
       font-size: 1rem;
       padding: 6px 12px;
+      margin: 30px 0 15px 0;
+    }
+    .chat-row {
+      margin-bottom: 20px;
+      gap: 10px;
+    }
+    .avatar {
+      width: 35px;
+      height: 35px;
+      font-size: 1rem;
+    }
+    .isa-icon {
+      width: 50px;
+      height: 50px;
+      font-size: 1rem;
     }
   }
 
