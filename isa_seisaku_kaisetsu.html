@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【最強図解】中道改革連合 7つの約束</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap');
+
+        :root {
+            /* メインカラー定義 */
+            --primary: #005eb0; /* Komeito Blue */
+            --accent: #FFD700; /* Gold */
+            --danger: #FF6B6B; /* Pop Red */
+            --success: #4CD964; /* Green */
+            --bg: #F0F4F8;
+            --text: #333;
+            --card-bg: #fff;
+            --border: 3px solid #1a1a1a;
+            --shadow: 5px 5px 0px #1a1a1a;
+            --radius: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: var(--bg);
+            background-image: radial-gradient(#dbeafe 15%, transparent 15%);
+            background-size: 20px 20px;
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            background: var(--card-bg);
+            border: var(--border);
+            box-shadow: var(--shadow);
+            border-radius: var(--radius);
+            overflow: hidden;
+            margin-bottom: 40px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* --- HEADER --- */
+        header {
+            background: linear-gradient(135deg, #005eb0 0%, #00b4db 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: var(--border);
+            position: relative;
+        }
+
+        header::after {
+            content: "🌈";
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 3rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .header-badge {
+            background: var(--accent);
+            color: #000;
+            padding: 5px 20px;
+            border-radius: 50px;
+            font-weight: 900;
+            display: inline-block;
+            border: 2px solid #000;
+            margin-bottom: 10px;
+            box-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin: 10px 0;
+            text-shadow: 3px 3px 0 #000;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            font-weight: 700;
+            background: rgba(255,255,255,0.2);
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        /* --- INTRO SECTION --- */
+        .intro-section {
+            padding: 30px;
+            text-align: center;
+            background: #fff;
+            border-bottom: var(--border);
+            flex-shrink: 0;
+        }
+
+        .speaker-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+
+        .speaker-icon {
+            width: 60px;
+            height: 60px;
+            background: #e3f2fd;
+            border-radius: 50%;
+            border: 2px solid #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .intro-text {
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: bold;
+        }
+
+        /* --- GRID LAYOUT --- */
+        .promises-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 30px;
+            background: #f8fbff;
+            flex: 1;
+        }
+
+        .card {
+            background: #fff;
+            border: 2px solid #000;
+            border-radius: var(--radius);
+            padding: 20px;
+            box-shadow: 4px 4px 0 #ccc;
+            transition: transform 0.2s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 6px 6px 0 #bbb;
+        }
+
+        .card-number {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: #000;
+            color: #fff;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 1.2rem;
+            border-bottom-left-radius: 10px;
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .card-title {
+            font-weight: 900;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+            border-bottom: 2px dashed #ddd;
+            padding-bottom: 10px;
+        }
+
+        .card-desc {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .highlight {
+            background: linear-gradient(transparent 70%, var(--accent) 70%);
+            font-weight: bold;
+        }
+
+        /* --- CONCLUSION --- */
+        .conclusion {
+            background: var(--accent);
+            padding: 40px 20px;
+            text-align: center;
+            border-top: var(--border);
+            flex-shrink: 0;
+        }
+
+        .conclusion h2 {
+            font-size: 1.8rem;
+            font-weight: 900;
+            margin: 0 0 10px;
+        }
+
+        .conclusion p {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .youtube-btn {
+            display: inline-block;
+            background: #FF0000;
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            font-weight: 900;
+            border-radius: 50px;
+            margin-top: 20px;
+            border: 2px solid #000;
+            box-shadow: 4px 4px 0 rgba(0,0,0,0.3);
+            transition: all 0.2s;
+        }
+
+        .youtube-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 2px 2px 0 rgba(0,0,0,0.3);
+        }
+
+        /* 戻るリンク */
+        .back-link {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .back-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            opacity: 0.9;
+        }
+
+        .nav-container {
+            padding: 20px;
+            background: var(--card-bg);
+            border-bottom: var(--border);
+        }
+
+        /* --- PRINT STYLES (PDF互換性) --- */
+        @media print {
+            body {
+                background: white;
+                background-image: none;
+                margin: 0;
+                padding: 0;
+                color: #000;
+            }
+            .container {
+                box-shadow: none;
+                margin: 0;
+                width: 100%;
+                max-width: 100%;
+                border: none;
+            }
+            header {
+                background: white;
+                color: #000;
+                border: 2px solid #000;
+                padding: 20px;
+            }
+            header::after { display: none; }
+            h1 { text-shadow: none; font-size: 2rem; }
+            .subtitle { background: none; border: 1px solid #000; }
+            
+            .promises-grid {
+                background: white;
+                padding: 10px;
+                grid-template-columns: 1fr 1fr; /* 印刷時は2列で省スペース */
+                gap: 15px;
+            }
+            .card {
+                box-shadow: none;
+                break-inside: avoid; /* ページまたぎ防止 */
+                border: 1px solid #000;
+            }
+            .conclusion {
+                background: white;
+                border: 2px solid #000;
+                margin-top: 20px;
+            }
+            .youtube-btn { display: none; }
+            .back-link { display: none; }
+            .nav-container { display: none; }
+            .card-icon { font-size: 2rem; }
+            
+            /* 印刷用フッター追加 */
+            body::after {
+                content: "出典：いさ進一チャンネル「中道改革連合7つの公約」要約資料";
+                display: block;
+                text-align: center;
+                font-size: 10pt;
+                margin-top: 20px;
+                border-top: 1px solid #ccc;
+                padding-top: 10px;
+            }
+        }
+
+        /* --- RESPONSIVE MOBILE --- */
+        @media (max-width: 600px) {
+            .container {
+                margin: 0;
+                border-radius: 0;
+                border-left: none;
+                border-right: none;
+            }
+            h1 { font-size: 1.8rem; }
+            .header-badge { font-size: 0.9rem; }
+            .promises-grid { grid-template-columns: 1fr; padding: 20px; }
+            .card-title { font-size: 1.2rem; }
+            .card-desc { font-size: 0.9rem; }
+            .intro-section { padding: 20px 15px; }
+            .conclusion { padding: 30px 15px; }
+            .conclusion h2 { font-size: 1.5rem; }
+            .conclusion p { font-size: 1rem; }
+            .nav-container { padding: 15px; }
+            header { padding: 30px 15px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 戻るリンク -->
+    <div class="nav-container">
+        <a href="index.html" class="back-link">← 記事一覧に戻る</a>
+    </div>
+
+    <header>
+        <div class="header-badge">中学生でもわかる！</div>
+        <h1>中道改革連合<br>「7つの最強公約」</h1>
+        <div class="subtitle">生活を守る！未来を変える！</div>
+    </header>
+
+    <div class="intro-section">
+        <div class="speaker-box">
+            <div class="speaker-icon">🪩</div>
+            <div style="text-align:left;">
+                <div style="font-size:0.8rem; color:#666;">解説者</div>
+                <strong>いさ進一さん</strong>
+            </div>
+        </div>
+        <p class="intro-text">
+            「みんなの生活を楽にしたい！」「平和な日本を守りたい！」<br>
+            そんな熱い思いが詰まった7つの約束を、超わかりやすく図解しました。<br>
+            <span class="highlight">ポジティブな未来へのロードマップ</span>です！
+        </p>
+    </div>
+
+    <div class="promises-grid">
+        <!-- 公約1 -->
+        <div class="card">
+            <div class="card-number">1</div>
+            <span class="card-icon">🍎</span>
+            <div class="card-title">食べ物の税金ゼロ！</div>
+            <div class="card-desc">
+                食料品の消費税（8%）を<span class="highlight">「ずっと0%」</span>にします。<br>
+                期間限定じゃありません。毎日のお買い物が安くなって、家計を直接助けます！
+            </div>
+        </div>
+
+        <!-- 公約2 -->
+        <div class="card">
+            <div class="card-number">2</div>
+            <span class="card-icon">💰</span>
+            <div class="card-title">お金は賢く作る！</div>
+            <div class="card-desc">
+                「税金を下げるなら借金するの？」→ <span class="highlight">いいえ！</span><br>
+                国の貯金（基金）を賢く運用して利益を出す「ジャパン・ファンド」で、新しいお財布を作ります。
+            </div>
+        </div>
+
+        <!-- 公約3 -->
+        <div class="card">
+            <div class="card-number">3</div>
+            <span class="card-icon">🕊️</span>
+            <div class="card-title">核兵器は絶対NO！</div>
+            <div class="card-desc">
+                「核を持ったほうが安全」は間違い。<br>
+                世界から孤立しないよう、<span class="highlight">「持たず・作らず・持ち込ませず」</span>の平和ルールを絶対に守り抜きます。
+            </div>
+        </div>
+
+        <!-- 公約4 -->
+        <div class="card">
+            <div class="card-number">4</div>
+            <span class="card-icon">💪</span>
+            <div class="card-title">定年をなくす！</div>
+            <div class="card-desc">
+                「60歳過ぎたら給料ダウン」なんて古い！<br>
+                元気なら何歳でも現役と同じ条件で働ける、<span class="highlight">年齢で差別されない社会</span>を作ります。
+            </div>
+        </div>
+
+        <!-- 公約5 -->
+        <div class="card">
+            <div class="card-number">5</div>
+            <span class="card-icon">🎓</span>
+            <div class="card-title">奨学金サポート！</div>
+            <div class="card-desc">
+                「借金返すのが辛い…」そんな若者を応援。<br>
+                企業が代わりに返済する仕組みを広げたり、返済分を<span class="highlight">減税</span>して手取りを増やします。
+            </div>
+        </div>
+
+        <!-- 公約6 -->
+        <div class="card">
+            <div class="card-number">6</div>
+            <span class="card-icon">🧾</span>
+            <div class="card-title">インボイス廃止！</div>
+            <div class="card-desc">
+                小さなお店やフリーランスを苦しめる複雑なルールは撤廃！<br>
+                消費税0%にするなら、そもそもこの面倒な制度は<span class="highlight">必要ありません。</span>
+            </div>
+        </div>
+
+        <!-- 公約7 -->
+        <div class="card">
+            <div class="card-number">7</div>
+            <span class="card-icon">👫</span>
+            <div class="card-title">自分らしく生きる</div>
+            <div class="card-desc">
+                結婚しても名前を変えたくない人はそのままでOK（選択的夫婦別姓）。<br>
+                さらに<span class="highlight">18歳から選挙に出られる</span>ようにして、若者の声を政治に届けます！
+            </div>
+        </div>
+    </div>
+
+    <div class="conclusion">
+        <h2>🫰 Love & Peace & Smile! ✌️</h2>
+        <p>
+            対立や分断じゃなくて、<br>
+            「優しさ」と「対話」で解決する社会へ。<br>
+            中道改革連合は、あなたの生活の一番近くにいます。
+        </p>
+        <a href="https://www.youtube.com/watch?v=L-2D48pWDEM" target="_blank" class="youtube-btn">
+            ▶ 動画でいさ進一さんの解説を見る
+        </a>
+        <div style="margin-top: 20px;">
+            <a href="index.html" class="back-link">← 記事一覧に戻る</a>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
