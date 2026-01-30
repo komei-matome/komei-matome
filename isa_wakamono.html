@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>若者の疑問に答える！中道改革連合Q&A完全版</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --brand-blue: #0067C0;
+    --brand-orange: #F29600;
+    --bg-color: #f4f7f6;
+    --card-bg: #ffffff;
+    --text-main: #333333;
+    --text-light: #666666;
+    --accent-red: #ff5252;
+    --chat-user-bg: #ffffff;
+    --chat-isa-bg: #e3f2fd;
+    --shadow: 0 4px 15px rgba(0,0,0,0.05);
+  }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fafafa;
+    min-height: 100vh;
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ヘッダーエリア */
+  header {
+    background: linear-gradient(135deg, var(--brand-blue), #0091ea);
+    color: white;
+    padding: 40px 20px 30px;
+    text-align: center;
+    border-radius: 0 0 30px 30px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  header::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 10%, transparent 10%);
+    background-size: 20px 20px;
+    opacity: 0.3;
+    transform: rotate(45deg);
+  }
+
+  /* ミラーボール風スタイル定義 */
+  .mirrorball-bg {
+    background: 
+      /* ハイライト（光沢） */
+      radial-gradient(circle at 30% 30%, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 20%),
+      /* 格子模様（薄くして文字を見やすく） */
+      repeating-linear-gradient(45deg, rgba(255,255,255,0.1) 0px, rgba(255,255,255,0.1) 1px, transparent 1px, transparent 10px),
+      repeating-linear-gradient(-45deg, rgba(255,255,255,0.1) 0px, rgba(255,255,255,0.1) 1px, transparent 1px, transparent 10px),
+      /* ベースグラデーション（少し濃くしてコントラスト確保） */
+      linear-gradient(135deg, #005090, #0098e0);
+    position: relative;
+    overflow: hidden;
+    /* テキストシャドウを強化して文字を浮き上がらせる */
+    text-shadow: 0 2px 4px rgba(0,0,0,0.6), 0 0 5px rgba(0,0,0,0.3);
+  }
+
+  /* キラキラアニメーション */
+  .mirrorball-bg::after {
+    content: '✨';
+    position: absolute;
+    top: 5%;
+    right: 15%;
+    font-size: 0.6em;
+    animation: twinkle 1.5s infinite alternate;
+  }
+  .mirrorball-bg::before {
+    content: '✨';
+    position: absolute;
+    bottom: 10%;
+    left: 15%;
+    font-size: 0.5em;
+    animation: twinkle 2s infinite alternate-reverse;
+  }
+
+  @keyframes twinkle {
+    0% { opacity: 0.3; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1.2); }
+  }
+
+  .header-icon {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.6rem; /* 少し大きく */
+    font-weight: 800; /* より太く */
+    border: 4px solid white;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+    position: relative;
+    z-index: 2;
+    line-height: 1.1;
+  }
+
+  h1 {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 1.8rem;
+    margin: 0;
+    font-weight: 800;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 2;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-top: 5px;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* 緊急アクションカード */
+  .action-card {
+    background: white;
+    margin: 0 20px 40px;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    border-top: 5px solid var(--accent-red);
+    position: relative;
+  }
+
+  .action-title {
+    color: var(--accent-red);
+    font-weight: bold;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+
+  .action-content {
+    background: #fff5f5;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+  }
+
+  .action-list li {
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+
+  /* Q&A エリア */
+  .qa-section {
+    padding: 0 20px 40px;
+    flex: 1;
+  }
+
+  .section-title {
+    text-align: center;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    color: var(--brand-blue);
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .section-title::before, .section-title::after {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: var(--brand-orange);
+    border-radius: 3px;
+  }
+
+  /* チャットスタイル */
+  .chat-box {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .chat-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .chat-row.isa {
+    flex-direction: row-reverse;
+  }
+
+  .avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+
+  .av-user {
+    background: #eee;
+    color: #666;
+  }
+
+  .av-isa {
+    /* 共通クラス mirrorball-bg で上書きされるためベース設定のみ */
+    color: white;
+    border: 2px solid white;
+    font-size: 1rem;
+  }
+
+  .bubble {
+    position: relative;
+    padding: 15px 20px;
+    border-radius: 18px;
+    max-width: 85%;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    line-height: 1.6;
+  }
+
+  .b-user {
+    background: var(--chat-user-bg);
+    border-top-left-radius: 2px;
+    color: var(--text-main);
+  }
+
+  .b-isa {
+    background: var(--chat-isa-bg);
+    border-top-right-radius: 2px;
+    color: #0d47a1;
+  }
+
+  .name-label {
+    font-size: 0.75rem;
+    color: #888;
+    margin-bottom: 5px;
+    display: block;
+    font-weight: bold;
+  }
+
+  .question-cat {
+    display: inline-block;
+    background: #f0f0f0;
+    color: #555;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+
+  /* カテゴリ区切り */
+  .divider {
+    text-align: center;
+    margin: 40px 0 20px;
+    color: #999;
+    font-size: 0.9rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  .divider::before, .divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #e0e0e0;
+  }
+
+  /* フッター */
+  .footer {
+    text-align: center;
+    padding: 30px;
+    background: #eee;
+    color: #666;
+    font-size: 0.8rem;
+    margin-top: auto;
+    flex-shrink: 0;
+  }
+
+  .source-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: var(--brand-blue);
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 1px dotted var(--brand-blue);
+  }
+
+  .video-btn {
+    display: inline-block;
+    margin-top: 20px;
+    background-color: #ff0000;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    font-size: 1rem;
+  }
+
+  .video-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    background-color: #e60000;
+  }
+
+  /* 戻るリンク */
+  .back-link {
+    display: inline-block;
+    background: var(--brand-blue);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+  }
+  .back-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    opacity: 0.9;
+  }
+
+  .nav-container {
+    padding: 20px;
+    background: var(--card-bg);
+    border-bottom: 1px solid #eee;
+  }
+
+  @media (max-width: 600px) {
+    .container { width: 100%; box-shadow: none; padding: 0; }
+    .bubble { max-width: 90%; font-size: 0.9rem; padding: 12px 15px; }
+    h1 { font-size: 1.5rem; }
+    header { padding: 30px 15px 25px; }
+    .qa-section { padding: 0 15px 30px; }
+    .action-card { margin: 0 15px 30px; padding: 20px; }
+    .footer { padding: 25px 15px; }
+    .nav-container { padding: 15px; }
+    .avatar { width: 38px; height: 38px; font-size: 1rem; }
+    .header-icon { width: 70px; height: 70px; font-size: 1.4rem; }
+    .section-title { font-size: 1.3rem; margin-bottom: 20px; }
+  }
+
+  @media print {
+    body {
+      background: white;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .back-link, .video-btn, .nav-container {
+      display: none;
+    }
+    .container {
+      max-width: 100%;
+      box-shadow: none;
+    }
+    header {
+      border: 1px solid #ccc;
+      border-radius: 0;
+    }
+    .chat-row {
+      break-inside: avoid;
+      margin-bottom: 15px;
+    }
+    .divider {
+      break-after: avoid;
+    }
+    .action-card {
+      break-inside: avoid;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="nav-container">
+    <a href="index.html" class="back-link">← 記事一覧に戻る</a>
+  </div>
+
+  <header>
+    <div class="header-icon mirrorball-bg">
+      いさ
+      <span style="font-size: 0.5em; font-weight: bold;">進一</span>
+    </div>
+    <h1>若者の『？』に<br>全部答えますSP</h1>
+    <div class="subtitle">2026.01.29 YouTubeライブ要約</div>
+  </header>
+
+  <!-- アクション要請 -->
+  <div class="action-card">
+    <div class="action-title">
+      <i class="fas fa-bullhorn"></i> 緊急のお願い：ネット大作戦
+    </div>
+    <div class="action-content">
+      <p>今、ネット上では「悪口動画」ばかり拡散されています。アルゴリズムを味方につけるためにご協力ください！</p>
+      <ul class="action-list">
+        <li>✅ 応援動画を見たら必ず「いいね」👍</li>
+        <li>✅ 一言でも「コメント」を書く ✏️</li>
+        <li>✅ 友達に「シェア」する 🔄</li>
+      </ul>
+      <p style="margin:0; font-size:0.85rem; color:#d32f2f;">※反応が多い動画が良い動画としておすすめされます！</p>
+    </div>
+  </div>
+
+  <div class="qa-section">
+    <div class="section-title">若者からの12の質問</div>
+    
+    <div class="chat-box">
+
+      <!-- Q1 -->
+      <div class="divider">党のイメージ・人事</div>
+      <div class="chat-row">
+        <div class="avatar av-user">Q</div>
+        <div class="bubble b-user">
+          <span class="name-label">福岡・20代女性</span>
+          <span class="question-cat">イメージ</span>
+          代表がおじさんばかり（5G）で古臭いです。女性や若者がトップになることはありますか？自民党の方がキラキラして見えます。
+        </div>
+      </div>
+      <div class="chat-row isa">
+        <div class="avatar av-isa mirrorball-bg">伊</div>
+        <div class="bubble b-isa">
+          <span class="name-label">いさ進一</span>
+          ごもっともです（笑）。でも期待してください。実は女性議員の比率は、自民・公明（約10%）に比べて、旧立憲が合流した中道は高く（約25%）、女性が活躍しています。これからどんどん若返りを図ります。
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="chat-row">
+        <div class="avatar av-user">Q</div>
+        <div class="bubble b-user">
+          <span class="name-label">大阪・20代男性</span>
+          <span class="question-cat">組織</span>
+          なぜ参議院はまだ合流しないんですか？
+        </div>
+      </div>
+      <div class="chat-row isa">
+        <div class="avatar av-isa mirrorball-bg">伊</div>
+        <div class="bubble b-isa">
+          <span class="name-label">いさ進一</span>
+          解散が急すぎて間に合わなかったからです。参議院は任期も違うため調整に時間がかかりますが、将来的には合流する方針です。
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="chat-row">
+        <div class="avatar av-user">Q</div>
+        <div class="bubble b-user">
+          <span class="name-label">東京・20代女性</span>
+          <span class="question-cat">信頼性</span>
+          旧立憲の人たちは本当に理念に共感して入党しているんですか？選挙目当てでは？
+        </div>
+      </div>
+      <div class="chat-row isa">
+        <div class="avatar av-isa mirrorball-bg">伊</div>
+        <div class="bubble b-isa">
+          <span class="name-label">いさ進一</span>
+          現場で一緒に戦っていますが、みんな理念に共感しています。「生活者を守る」という方向性は完全に一致しているので、そこは信じてください。
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="divider">政策・理念</div>
+      <div class="chat-row">
+        <div class="avatar av-user">Q</div>
+        <div class="bubble b-user">
+          <span class="name-label">埼玉・20代男性</span>
+          <span class="question-cat">理念</span>
+          「生活者ファースト」って具体的になんですか？
+        </div>
+      </div>
+      <div class="chat-row isa">
+        <div class="avatar av-isa mirrorball-bg">伊</div>
+        <div class="bubble b-isa">
+          <span class="name-label">いさ進一</span>
+          「強い国（GDPや株価）」を目指すのではなく、**「一人ひとりが豊かさを実感できる経済」**を目指すことです。国が金持ちになっても、あなたの生活が苦しければ意味がないと考えています。
+        </div>
+      </div>
+
+      <!-- Q5 -->
+      <div class="chat-row">
+        <div class="avatar av-user">Q</div>
+        <div class="bubble b-user">
+          <span class="name-label">北海道・40代女性</span>
+          <span class="question-cat">対立軸</span>
+          もし自民党（高市総理）が勝つとどうなりますか？
+        </div>
+      </div>
+      <div class="chat-row isa">
+        <div class="avatar av-isa mirrorball-bg">伊</div>
+        <div class="bubble b-isa">
+          <span class="name-label">いさ進一</span>
+          高市さんは「勝ったら国論を二分すること（核保有の議論など）をやる」と言っています。選挙で信を問わずに、勝ってから大きな変更を行うのは危険だと考えています。
+        </div>
+      </div>
+
+      <!-- Q6 -->
+      <div class="chat-row">
+        <div class="avatar av-user">Q</div>
+        <div class="bubble b-user">
+          <span class="name-label">愛知・40代女性</span>
+          <span class="question-cat">経済</span>
+          減税はポピュリズム（人気取り）だと批判されていますが？
+        </div>
+      </div>
+      <div class="chat-row isa">
+        <div class="avatar av-isa mirrorball-bg">伊</div>
+        <div class="bubble b-isa">
+          <span class="name-label">いさ進一</span>
+          財源を示さずに言うならポピュリズムですが、私たちは「ジャパン・ファンド」という財源をセットで示して、苦労して設計しています。むしろ財源を「検討中」としか言わない与党の方が無責任ではないでしょうか。
+        </div>
+      </div>
+
+      <!-- Q7 -->
+      <div class="chat-row">
+        <div class="avatar av-user">Q</div>
+        <div class="bubble b-user">
+          <span class="name-label">和歌山・30代男性</span>
+          <span class="question-cat">消費税</span>
+          外食（10%）と自炊（0%）で税率の差が開くと、飲食店が潰れませんか？
+        </div>
+      </div>
+      <div class="chat-row isa">
+        <div class="avatar av-isa mirrorball-bg">伊</div>
+        <div class="bubble b-isa">
+          <span class="name-label">いさ進一</span>
+          その懸念は議論が必要です。ただ、「生きるために必要な食料品」の税をまず下げることが最優先です。外食産業への支援策は別途議論していきます。
+        </div>
+      </div>
+
+      <!-- Q8 -->
+      <div class="chat-row">
+        <div class="avatar av-user">Q</div>
+        <div class="bubble b-user">
+          <span class="name-label">神奈川・20代男性</span>
+          <span class="question-cat">財源</span>
+          ジャパン・ファンドは投資だから損するリスクもありますよね？
+        </div>
+      </div>
+      <div class="chat-row isa">
+        <div class="avatar av-isa mirrorball-bg">伊</div>
+        <div class="bubble b-isa">
+          <span class="name-label">いさ進一</span>
+          デイトレードのような売買益ではなく、**「持ち続けて配当金を得る」**スタイルなのでリスクは低いです。年金運用（GPIF）もこの方法で、配当だけで毎年数兆円の利益が出ています。
+        </div>
+      </div>
+
+      <!-- Q9 -->
+      <div class="divider">教育・若者支援</div>
+      <div class="chat-row">
+        <div class="avatar av-user">Q</div>
+        <div class="bubble b-user">
+          <span class="name-label">鹿児島・30代女性</span>
+          <span class="question-cat">教育</span>
+          幼児教育の「質」にもっと目を向けてほしい。
+        </div>
+      </div>
+      <div class="chat-row isa">
+        <div class="avatar av-isa mirrorball-bg">伊</div>
+        <div class="bubble b-isa">
+          <span class="name-label">いさ進一</span>
+          おっしゃる通りです。これまでは「量（待機児童対策など）」や「金銭的支援」に注力し、世界トップレベルになりました。これからは保育士の待遇改善など「質」の向上に投資します。
+        </div>
+      </div>
+
+      <!-- Q10 -->
+      <div class="chat-row">
+        <div class="avatar av-user">Q</div>
+        <div class="bubble b-user">
+          <span class="name-label">東京・20代女性</span>
+          <span class="question-cat">社会保険料</span>
+          働いても社会保険料で手取りが減ります。現役世代へのメリットは？
+        </div>
+      </div>
+      <div class="chat-row isa">
+        <div class="avatar av-isa mirrorball-bg">伊</div>
+        <div class="bubble b-isa">
+          <span class="name-label">いさ進一</span>
+          子育て世帯だけでなく、**単身者への「家賃補助」**や奨学金返済の減税を行います。単に保険料を下げるだけだと医療負担が増える（維新の案など）ので、私たちは「予防医療」で医療費全体を下げて保険料を抑制します。
+        </div>
+      </div>
+
+      <!-- Q11 -->
+      <div class="chat-row">
+        <div class="avatar av-user">Q</div>
+        <div class="bubble b-user">
+          <span class="name-label">青森・40代女性</span>
+          <span class="question-cat">働き方</span>
+          定年廃止は反対です。死ぬまで働けということですか？
+        </div>
+      </div>
+      <div class="chat-row isa">
+        <div class="avatar av-isa mirrorball-bg">伊</div>
+        <div class="bubble b-isa">
+          <span class="name-label">いさ進一</span>
+          違います。**「働きたい人が、年齢を理由に給料を下げられないようにする」**ための廃止です。60歳を過ぎても元気で同じ仕事をしているのに、給料だけ下がるのはおかしいですよね？選択肢を増やす政策です。
+        </div>
+      </div>
+
+      <!-- Q12 -->
+      <div class="divider">多様性・その他</div>
+      <div class="chat-row">
+        <div class="avatar av-user">Q</div>
+        <div class="bubble b-user">
+          <span class="name-label">千葉・20代女性</span>
+          <span class="question-cat">多様性</span>
+          選択的夫婦別姓や同性婚は本当に実現できますか？
+        </div>
+      </div>
+      <div class="chat-row isa">
+        <div class="avatar av-isa mirrorball-bg">伊</div>
+        <div class="bubble b-isa">
+          <span class="name-label">いさ進一</span>
+          自民党保守派とは違い、私たちは「包摂（多様性を認める）」を掲げているので実現します。他人の生き方に自分の価値観を押し付けるのは良くないと考えています。
+        </div>
+      </div>
+
+      <!-- Q13 -->
+      <div class="chat-row">
+        <div class="avatar av-user">Q</div>
+        <div class="bubble b-user">
+          <span class="name-label">東京・30代男性</span>
+          <span class="question-cat">税制</span>
+          インボイス制度の廃止は混乱しませんか？
+        </div>
+      </div>
+      <div class="chat-row isa">
+        <div class="avatar av-isa mirrorball-bg">伊</div>
+        <div class="bubble b-isa">
+          <span class="name-label">いさ進一</span>
+          小規模事業者への負担が大きすぎます。食料品消費税を0%にして税率をシンプルにすれば、インボイスなしでも管理は可能です。
+        </div>
+      </div>
+
+      <!-- Q14 -->
+      <div class="chat-row">
+        <div class="avatar av-user">Q</div>
+        <div class="bubble b-user">
+          <span class="name-label">大阪・20代女性</span>
+          <span class="question-cat">外国人</span>
+          移民・外国人問題が不安です。
+        </div>
+      </div>
+      <div class="chat-row isa">
+        <div class="avatar av-isa mirrorball-bg">伊</div>
+        <div class="bubble b-isa">
+          <span class="name-label">いさ進一</span>
+          ルールを守らない人は厳しく対処します。ただ、人手不足の現場には彼らが必要です。「労働力」としてだけでなく「人」として受け入れ、日本語教育などの支援をセットで行うことでトラブルを防ぎます。
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>出典：<a href="https://www.youtube.com/watch?v=ThdJ4yCUZb8" class="source-link" target="_blank">いさ進一チャンネル 生配信 (2026/1/29)</a></p>
+    <p>※動画の内容に基づき要約・編集しています。</p>
+    <a href="https://www.youtube.com/watch?v=ThdJ4yCUZb8" target="_blank" class="video-btn">
+      <i class="fab fa-youtube"></i> 動画で全編を見る
+    </a>
+    <div style="margin-top: 20px;">
+      <a href="index.html" class="back-link">← 記事一覧に戻る</a>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
